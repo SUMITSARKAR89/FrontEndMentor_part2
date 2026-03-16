@@ -1,21 +1,20 @@
-  /* - Mobile: 375px
+/* - Mobile: 375px
 - Desktop: 1440px */
 
-:root{
-    --Purple: hsl(257, 40%, 49%);
-    --Magenta: hsl(300, 69%, 71%)
+:root {
+  --Purple: hsl(257, 40%, 49%);
+  --Magenta: hsl(300, 69%, 71%);
 }
-  
-    *,
-  *::after,
-  *::before{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
- 
-  }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a,
@@ -25,6 +24,7 @@ button,
 i {
   display: block;
   text-transform: capitalize;
+  text-decoration: none;
 }
 html {
   scroll-behavior: smooth;
@@ -44,39 +44,209 @@ html {
   text-align: center;
 }
 .attribution a {
-   color: hsl(228, 50%, 65%);
-   padding: 0 5px;
+  color: hsl(228, 50%, 65%);
+  padding: 0 5px;
 }
-body{
+body {
   max-width: 100%;
   height: auto;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 auto;
   position: relative;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-   animation: fadeed 0.5s ease-in-out;
-   transition: all 0.5s ease-in-out;
-   color: #fff;
-   background: var(--Purple);
+  animation: fadeed 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  color: #fff;
+  background: var(--Purple);
+  
 }
-h1{
+
+h1 {
   font-family: "Open Sans", sans-serif;
   font-size: 600;
 }
-p{
+p {
   font-size: 400;
 }
-footer{
+
+/* ---------------------------------hero ---------------------  */
+section{
+  max-width: 100%;
+  width: 100%;
+ 
+}
+.hero{
+  background-color: hsl(257, 40%, 49%);
+background-image: url("images/bg-desktop.svg");
+
+background-repeat: no-repeat;
+background-size: cover;
+background-position:top center;
+max-width: 100%;
+margin: 0 auto;
+position: relative;
+
+min-height:100vh;
+padding:4%  ;
+transition: 0.5s ease;
+
+}
+.hero nav{
+  width: 200px;
+  height: auto;
+  
+}
+nav img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main{
+  max-width: 100%;
+  width: 100%;
+  padding: 3% 0;
+}
+main .container{
+  max-width:100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 5% auto 1%;
+  width: 100%;
+ 
+}
+.container .cardImg{
+  width: 100%;
+  transition: 0.5s ease;
+
+}
+.container .cardText{
+  max-width: 100%;
+  padding-left: 15%;
+  padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ width: 100%;
+ transition: 0.5s ease;
+
+}
+.cardText h1{
+  margin: 15px 0;
+  text-transform: capitalize;
+
+}
+.cardText p{
+  font-weight: 400;
+  opacity: 0.8;
+  line-height: 25px;
+}
+.cardText a{
+  background: #fff;
+  padding: 2.5% 15%;
+  width: fit-content;
+  transition: 0.5s;
+  color: var(--Purple);
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 3%;
+  border-radius: 35px;
+  cursor: pointer;
+  text-align: center;
+  
+}
+.cardText a:hover{
+  color: #fff;
+   background: var(--Magenta);
+}
+
+.cardImg img{
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer {
   display: flex;
   justify-content: center;
   padding: 5%;
-  
+
   margin: 0 auto;
   align-items: center;
   width: 100%;
 }
-footer p{
+footer p {
   max-width: 100%;
   display: flex;
   color: #fff;
+}
+.social-icon{
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: end;
+  align-items: center;
+}
+.social-icon i{
+  cursor: pointer;
+  border: 1px solid #fff;
+  padding: 5px 5px;
+  width: 30px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.5s ease;
+  color: #fff;
+
+}
+.social-icon i:hover{
+  border: 1px solid #ddd;
+  color: var(--Magenta);
+}
+
+
+/* =======================================  */
+@media (max-width:1280px){
+
+  main .container{
+    grid-template-columns: 1fr;
+  }
+  .hero{
+    padding: 4% 5%;
+  }
+  .cardImg img{
+    width: 100%;
+  }
+  .container .cardText{
+  
+  padding-left: 0;
+  
+
+}
+
+}
+@media (max-width:720px){
+  .container .cardText{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hero nav{
+  width: 150px;
+ 
+  
+}
+.hero{
+  background-image: url("images/bg-mobile.svg");
+}
+.social-icon{
+  justify-content: center;
+  align-items: center;
+}
+
 }
