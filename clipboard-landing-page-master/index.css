@@ -1,0 +1,462 @@
+:root {
+ --Green500: hsl(171, 66%, 44%);
+--Blue100: hsl(233, 100%, 69%);
+
+--Gray700: hsl(210, 10%, 33%);
+--Gray500: hsl(201, 11%, 66%);
+
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 2%;
+  margin: 0 auto;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+p{
+    line-height: 25px;
+    font-size: 15px;
+}
+
+a,
+img,
+input,
+button,
+i {
+  display: block;
+  text-transform: capitalize;
+  text-decoration: none;
+  
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+html {
+  scroll-behavior: smooth;
+}
+@keyframes fadeed {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+body {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+  position: relative;
+ font-family: "Bai Jamjuree", sans-serif;
+  overflow-x: hidden;
+  animation: fadeed 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background: #fff;
+}
+.container{
+    padding: 3%;
+    width: 100%;
+    max-width: 100%;
+    
+}
+section{
+    max-width: 100%;
+    width: 100%;
+    padding: 1%;
+    transition: 0.3s ease;
+}
+
+/* =================header start here===================  */
+header{
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top, #ffffff81, #fcf5f5ad);
+    position: relative;
+    background-image: url("images/bg-header-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: 0.2s ease;
+}
+header .container,
+.endsection .container{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    transition: 0.3s;
+
+}
+.container .logo{
+    margin: 3rem auto;
+    width: 100px;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+header .container h1,
+.endsection .container h3{
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+header .container p,
+.truckSection .container p,
+.clipboardsection .container p,
+.workflowSection .container p,
+.endsection .container p{
+    margin: 1rem;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--Gray500);
+}
+header .container .btn-group,
+.endsection .container .btn-group{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+    margin-top: 35px;
+}
+.btn-group a{
+    cursor: pointer;
+    border: 1px solid transparent;
+    width: fit-content;
+    padding: 12px 25px;
+    border-radius: 35px;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+.btn-group .ois-btn{
+    background: var(--Green500);
+    box-shadow: hsl(171, 66%, 44%, 0.5) 0px 7px 29px 0px;
+    color: #fff;
+    transition: 0.3s ease;
+    opacity: 1;
+}
+.btn-group .ois-btn:hover,
+.btn-group .mac-btn:hover{
+    opacity: 0.9;
+}
+.btn-group .mac-btn{
+     background: var(--Blue100);
+    box-shadow: hsl(233, 100%, 69%, 0.5) 0px 7px 29px 0px;
+    color: #fff;
+    transition: 0.3s ease;
+    opacity: 1;
+
+}
+
+/* ==========================main start here===================  */
+.truckSection,
+.clipboardsection,
+.workflowSection,
+.endsection{
+    position: relative;
+    margin-bottom: 3%;
+}
+.truckSection .container,
+.clipboardsection .container,
+.workflowSection .container{
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.truckSection .container h2,
+.clipboardsection .container h3,
+.workflowSection .container h3,
+.endsection .container h3{
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: #000;
+    margin:  0 auto;
+    margin-bottom: 15px;
+}
+.truck-container{
+    width: 100%;
+    margin: 3% auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    transition: 0.3s ease;
+}
+.truck-container .truck-img,
+.truck-container .truck-card{
+    width: 100%;
+}
+.truck-container .truck-img img{
+    width: 100%;
+
+}
+.truck-card{
+    width: 100%;
+    padding:10px 25px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 100%;
+}
+
+.truck-card .truck-card-content{
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.3s ease;
+}
+.truck-card-content h4{
+    font-size: 1.5rem;
+}
+.truck-card-content p{
+    color: var(--Gray700);
+
+}
+.clipboardsection .container h3{
+    font-size: 2rem;
+}
+
+.clipboard-img {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 25px ;
+}
+.workflow-container{
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.workflow-container .workflow-card{
+    width: 100%;
+    max-width: 100%;
+   padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+.workflow-card img{
+    width: 40px;
+    margin-bottom: 15px;
+
+}
+.workflow-card h4{
+    font-size: 1.5rem;
+    
+}
+.workflow-card p{
+    color: var(--Gray700);
+    text-align: center;
+}
+.workflow-logo{
+    max-width: 90%;
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 5% 0 2%;
+}
+.workflow-logo img{
+    width: 150px;
+    height: auto;
+}
+
+/* ===========footer--------------------------  */
+footer{
+    width: 100%;
+    max-width: 100%;
+    height: 50vh;
+    margin:  0 auto;
+    position: relative;
+    padding: 3% ;
+     background: linear-gradient(to top, #ffffff81, #fcf5f5ad);
+    position: relative;
+    background-image: url("images/bg-header-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+}
+.footer-container{
+    max-width: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: 0.3s ease;
+}
+.footer-container .footer-card{
+    width: 100%;
+    max-width: 100%;
+     position: relative;
+     padding: 25px;
+      
+
+}
+.footer-container .footer-card:nth-child(1){
+   
+    display: flex;
+    justify-content: center;
+}
+.footer-container .footer-card:nth-child(1) img{
+    width: 50px;
+    cursor: pointer;
+}
+.footer-container .footer-card:nth-child(2){
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 100%;
+    gap: 15px;
+   
+
+
+}
+.footer-container .footer-card:nth-child(2) a{
+    width: fit-content;
+    text-align: center; 
+    margin: 0 auto;
+    cursor: pointer;
+    color: #000;
+    font-weight: 600;
+    transition: 0.3s ease;
+    
+
+}
+.footer-container .footer-card:nth-child(3){
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+}
+.footer-card:nth-child(3) img{
+    width: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.footer-card:nth-child(3) img:hover,
+.footer-card:nth-child(2) a:hover{
+    opacity: 0.8;
+}
+
+/* ==============================================  */
+@media(max-width:1280px){
+    .footer-container .footer-card:nth-child(2){
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+@media(max-width:980px){
+    .footer-container .footer-card:nth-child(2){
+        grid-template-columns:1fr;
+        justify-content: center;
+        
+    }
+    .workflow-logo{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+.workflow-container{
+   
+    grid-template-columns: repeat(2, 1fr);
+}
+.truck-container{
+    flex-direction: column;
+    width: 80%;
+}
+
+}
+@media(max-width:720px){
+    .truck-card .truck-card-content{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.truck-card .truck-card-content p{
+    text-align: center;
+}
+.workflow-logo img{
+    width: 100px;
+    
+}
+.workflow-container{
+   
+    grid-template-columns: 1fr;
+}
+.footer-container{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+}
+@media(max-width:620px){
+    .footer-container{
+    grid-template-columns: 1fr;
+}
+header .container .btn-group,
+.endsection .container .btn-group{
+   gap: 30px;
+   flex-direction: column;
+}
+.workflow-logo{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+}
