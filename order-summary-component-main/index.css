@@ -1,0 +1,202 @@
+:root {
+ --Blue100: hsl(225, 100%, 94%);
+--Blue700: hsl(245, 75%, 52%);
+
+--Blue50: hsl(225, 100%, 98%);
+--Gray600: hsl(224, 23%, 55%);
+--Blue950: hsl(223, 47%, 23%);
+
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 2%;
+  margin: 0 auto;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+p{
+    line-height: 20px;
+    font-size: 15px;
+}
+
+a,
+img,
+input,
+button,
+i {
+  display: block;
+  text-transform: capitalize;
+  text-decoration: none;
+  
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+html {
+  scroll-behavior: smooth;
+}
+@keyframes fadeed {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+body {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+  position: relative;
+font-family: "Red Hat Display", sans-serif;
+  overflow-x: hidden;
+  animation: fadeed 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-image: url("images/pattern-background-desktop.svg");
+  background-position:  center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--Blue100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.container{
+    max-width: 100%;
+    width: 350px;
+    margin: 10% auto 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    background: var(--Blue50);
+
+}
+.container .cardImg{
+    width: 100%;
+    height: auto;
+    border-radius: 13px 13px 0 0;
+    
+}
+
+.cardImg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 13px 13px 0 0;
+    object-fit: cover;
+
+}
+.container .cardTxt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+    text-align: center;
+}
+.cardTxt h3{
+    font-size: 1.2rem;
+    color: var(--Blue950);
+    font-weight: 900;
+    text-transform: capitalize;
+}
+.cardTxt p.p{
+    color: var(--Gray600);
+    margin-top: 12px;
+}
+.cardTxt .card-music{
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+   justify-content: space-between;
+    gap: 15px;
+    margin-top: 25px;
+}
+.card-music img{
+    width: 40px;
+
+}
+.card-music .cardpaln{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: start;
+    margin-bottom: 10%;
+    
+}
+.cardpaln h4{
+   color: var(--Blue950);
+
+}
+.cardpaln p{
+    font-size: 12px;
+    color: var(--Gray600);
+    font-weight: 700;
+}
+.card-music span{
+    font-size: 14px;
+    color: var(--Blue700);
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.card-music span:hover{
+    color: var(--Blue950);
+}
+button{
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s ease;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+}
+button.submit{
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--Blue50);
+    background: var(--Blue700);
+    margin-bottom: 10px;
+}
+button.submit:hover,
+button.cencel:hover{
+    opacity: 0.8;
+}
+button.cencel{
+    font-weight: 700;
+    background: var(--Blue100);
+}
+@media(max-width:720px){
+    body{
+        background-image: url("images/pattern-background-mobile.svg");
+    }
+
+}
