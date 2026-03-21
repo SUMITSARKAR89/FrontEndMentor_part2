@@ -1,0 +1,187 @@
+:root {
+ --Blue600: hsl(185, 75%, 39%);
+--Navy950: hsl(229, 23%, 23%);
+--Gray500: hsl(227, 10%, 46%);
+
+--Gray100: hsl(225, 10%, 92%);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+
+a,
+img,
+input,
+button,
+i {
+  display: block;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+@keyframes fadeed {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: flex;
+}
+.attribution a {
+  color:#fff;
+  padding: 0 5px;
+}
+body {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+  position: relative;
+  font-family: "Kumbh Sans", sans-serif;
+  overflow-x: hidden;
+  background: var(--Blue600);
+  animation: fadeed 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.up-img{
+    position: fixed;
+    top: -80%;
+    left: -30%;
+    width: 100%;
+    height: 100%;
+}
+
+.down-img{
+    
+    position: fixed;
+    bottom: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+
+}
+.card{
+    z-index: 999;
+    max-width: 450px;
+    width: 100%;
+    height: 60vh;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    margin: 10% auto 5%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    position: relative;
+    
+}
+
+.card img{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 2px;
+    border: 1px solid var(--Gray100);
+}
+.card .card-up{
+    width: 100%;
+    height: 30vh;
+    background: var(--Blue600);
+    border-radius: 12px 12px 0 0 ;
+    background-image: url("images/bg-pattern-card.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.card .card-down{
+    background: var(--Gray100);
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 12px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    
+    padding: 10px 25px;
+}
+.card-down h4{
+    margin-top: 8%;
+    font-size: 1rem;
+    color: var(--Navy950);
+}
+.card-down h4 span{
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 5px;
+    color: var(--Gray500);
+}
+  
+.card-down p{
+    margin-top: 10px;
+    color: var(--Gray500);
+}
+.card-down .card-texts{
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    
+}
+.card-texts .card-txt{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+}
+.card-txt span{
+    font-size: 1.2rem;
+    color: var(--Navy950);
+    font-weight: 800;
+}
+.card-texts .card-txt  p{
+
+    padding: 0;
+    margin-top: -2px;
+}
+@media(max-width:500px){
+    body .card{
+         max-width:100%;
+         width: 300px;
+         margin-top: 15% auto 3%;
+
+    }
+
+    
+}
