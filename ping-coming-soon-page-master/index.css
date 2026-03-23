@@ -1,0 +1,236 @@
+:root {
+  --Blue500: hsl(223, 87%, 63%);
+ --Blue200: hsl(223, 100%, 88%);
+ --Red400: hsl(354, 100%, 66%);
+ --Gray400: hsl(0, 0%, 59%);
+ --Blue950: hsl(209, 33%, 12%);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 2%;
+  margin: 0 auto;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+
+a,
+img,
+input,
+button,
+i {
+  display: block;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+@keyframes fadeed {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+body {
+  max-width: 100%;
+  height: 100%;
+  width: 98%;
+  margin: 0 auto;
+  padding: 0 auto;
+  position: relative;
+  font-family: "Libre Franklin", sans-serif;
+  overflow-x: hidden;
+  animation: fadeed 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  
+  background: #fff;
+  
+}
+section{
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 5% 10%;
+
+}
+section .container{
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+}
+.container .imgcard{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.container .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.container .card .logo{
+    width: fit-content;
+    margin-bottom: 25px;
+}
+.container .card h1{
+    font-weight: 300;
+    font-size:2.5rem;
+    color: var(--Gray400);
+}
+.container .card h1 span{
+    font-weight: 800;
+    color: var(--Blue950);
+}
+.container .card .sub{
+    text-align: center;
+    color: var(--Blue950);
+
+}
+form{
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+form .input-grp{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.input-grp .error{
+    font-size: 12px;
+    color: var(--Red400);
+    padding-left: 15px;
+    opacity: 0;
+}
+.input-grp input{
+    width: 100%;
+    border:0;
+    outline:0;
+    padding:12px 20px;
+    border-radius: 35px;
+    border: 1px solid var(--Gray400);
+
+}
+input.errorborder{
+    border: 1px solid var(--Red400);
+}
+form button{
+    width: 100%;
+    border:0;
+    outline:0;
+    padding:12px 40px;
+    border-radius: 35px;
+    cursor: pointer;
+    background: var(--Blue500);
+    color: #fff;
+    font-weight: 700;
+    transition: 0.3s ease;
+
+
+    max-width: fit-content;
+}
+form button:hover{
+    opacity: 0.8;
+}
+.container .imgcard img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+footer{
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+}
+footer .social{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    
+}
+.social i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--Blue500);
+    padding: 7px;
+    
+    cursor: pointer;
+    transform: scale(0.9);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    
+}
+.social i:hover{
+    transform: scale(1.5);
+    background: var(--Blue500);
+    color: #fff;
+    
+}
+footer p{
+    font-size: 12px;
+    color: var(--Gray400);
+}
+@media(max-width:660px){
+    section{
+    
+    padding: 5% ;
+
+}
+section h1{
+    text-align: center;
+}
+form{
+   flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+}

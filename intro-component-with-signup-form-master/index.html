@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend mentor challange" />
+
+    <meta name="title" content="Frontend mentor challange" />
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/504277832_3201268406688328_2665400811850357163_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53a332&_nc_ohc=RsQ8FB9grKkQ7kNvwGonLMG&_nc_oc=AdmPd8GCYTAODMd6pz2WVgQdmMwXvR1qCrCjHScIpVi03gTbsSe_AlrmKGtdr-cMtVU&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=tRrU1h3rBbsq0J3qFtLYpA&_nc_ss=8&oh=00_AfwyqxVwC123F9IEQQdCB32iwUF2d3SM4esVq7Cn0kMLeA&oe=69BDCFA6"
+    />
+    <!-- font awesome cdn   --------------------------------->
+
+    <!-- this is google font section   --------------------------------->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- ionicon link   --------------------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js"
+      integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- favicon section   --------------------------------->
+    <link
+      rel="shortcut icon"
+      href="https://framerusercontent.com/images/QbZPUDfFXUG8DRCcKmLXFnnmWA.png"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+ 
+</head>
+<body>
+  <p id="successMsg"></p>
+  <div class="container">
+    <div class="card">
+      <h1>Learn to code by watching others</h1>
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+      but understanding how developers think is invaluable. </p>
+    </div>
+    <div class="card">
+      <div class="tag">
+        <p>
+          Try it free 7 days then $20/mo. thereafter
+        </p>
+      </div>
+      <form action="">
+        <div class="input_group">
+          <input type="text" name="firstName" id="firstName" placeholder="First Name" >
+          <p class="error" id="error1"></p>
+        </div>
+         <div class="input_group">
+          <input type="text" name="lastName" id="lastName" placeholder="Last Name" >
+          <p class="error" id="error2"></p>
+        </div>
+         <div class="input_group">
+          <input type="email" name="email" id="email" placeholder="Email Address">
+          <p class="error" id="error3"></p>
+        </div>
+         <div class="input_group">
+          <input type="password" name="password" id="password" placeholder="password">
+          <p class="error" id="error4"></p>
+        </div>
+        <button type="submit"> Claim your free trial </button>
+        <p class="term">By clicking the button, you are agreeing to our <b>Terms and Services</b></p>
+      </form>
+
+    </div>
+  </div>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">sumit sarkar</a>.
+    </p>
+  </footer>
+
+  <script>
+    const form = document.querySelector("form");
+    const successMsg = document.querySelector("#successMsg");
+    
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+    const firstName = document.querySelector("#firstName").value.trim();
+    const lastName = document.querySelector("#lastName").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const password = document.querySelector("#password").value.trim();
+
+      let valid = true;
+      if(firstName === ""){
+        document.getElementById("error1").innerText = "First Name can not be empty";
+        valid = false;
+        setTimeout(() => {
+          document.getElementById("error1").innerText = ""
+
+        },5000);
+      }else{
+        document.getElementById("error1").innerText = "";
+      }
+      if(lastName === ""){
+        document.getElementById("error2").innerText = "Last Name can not be empty";
+        valid = false;
+        setTimeout(() => {
+          document.getElementById("error2").innerText = ""
+
+        },6000);
+      }else{
+        document.getElementById("error2").innerText = "";
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(email === "" || !emailPattern.test(email)){
+        document.getElementById("error3").innerText = "example@gmail.com";
+        valid = false;
+        setTimeout(() => {
+          document.getElementById("error3").innerText = ""
+
+        },7000);
+      }else{
+        document.getElementById("error3").innerText = "";
+      }
+      if(password === ""){
+        document.getElementById("error4").innerText = "Password can not be empty";
+        valid = false;
+        setTimeout(() => {
+          document.getElementById("error4").innerText = ""
+
+        },8000);
+      }else{
+        document.getElementById("error4").innerText = "";
+      }
+      if(valid){
+        successMsg.style.display = "block";
+       successMsg.innerHTML = "From Submitted Successfully";
+       setTimeout(() => {
+        successMsg.style.display = "none";
+        successMsg.innerHTML = ""
+
+       },5000)
+      };
+      form.reset();
+
+    });
+  </script>
+</body>
+</html>

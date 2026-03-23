@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend mentor challange" />
+
+    <meta name="title" content="Frontend mentor challange" />
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/504277832_3201268406688328_2665400811850357163_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53a332&_nc_ohc=RsQ8FB9grKkQ7kNvwGonLMG&_nc_oc=AdmPd8GCYTAODMd6pz2WVgQdmMwXvR1qCrCjHScIpVi03gTbsSe_AlrmKGtdr-cMtVU&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=tRrU1h3rBbsq0J3qFtLYpA&_nc_ss=8&oh=00_AfwyqxVwC123F9IEQQdCB32iwUF2d3SM4esVq7Cn0kMLeA&oe=69BDCFA6"
+    />
+    <!-- font awesome cdn   --------------------------------->
+
+    <!-- this is google font section   --------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ionicon link   --------------------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js"
+      integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- favicon section   --------------------------------->
+    <link
+      rel="shortcut icon"
+      href="https://framerusercontent.com/images/QbZPUDfFXUG8DRCcKmLXFnnmWA.png"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <title>Frontend Mentor | Ping coming soon page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="card">
+          <img src="images/logo.svg" alt="" class="logo" />
+          <h1>We are launching <span>soon!</span></h1>
+          <p class="sub">Subscribe and get notified</p>
+          <form action="#">
+            <div class="input-grp">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="example@gmail.com"
+              />
+              <small class="error">Please provide a valid email address</small>
+            </div>
+            <button type="submit">Notify Me</button>
+          </form>
+        </div>
+        <div class="imgcard">
+          <img src="images/illustration-dashboard.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <!--  -->
+
+    <footer>
+      <div class="social">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+      <p>&copy; Copyright Ping. All rights reserved.</p>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">sumit sarkar</a>.
+      </p>
+    </footer>
+
+   <script>
+      const form = document.querySelector("form");
+      
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.querySelector("#email");
+      const errorTxt = document.querySelector(".error");
+        const emailValue = email.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailValue == "" || !emailPattern.test(emailValue)) {
+          errorTxt.style.opacity = "1";
+          email.classList.add("errorborder");
+
+          setTimeout(() => {
+            errorTxt.style.opacity = "0";
+          }, 5000);
+
+          setTimeout(() => {
+            email.classList.remove("errorborder");
+          }, 5000);
+        } else {
+          errorTxt.style.opacity = "0";
+          email.classList.remove("errorborder");
+          alert("Successfully subscribed!");
+          
+          form.reset();
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+
+ 

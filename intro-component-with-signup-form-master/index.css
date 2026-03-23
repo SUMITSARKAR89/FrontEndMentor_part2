@@ -1,0 +1,221 @@
+:root {
+  --Red400: hsl(0, 100%, 74%) ;
+--Green400: hsl(154, 59%, 51%);
+--Purple700: hsl(248, 32%, 49%);
+--Gray900: hsl(249, 10%, 26%) ;
+--Purple350: hsl(246, 25%, 77%);
+
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 2%;
+  margin: 0 auto;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+
+a,
+img,
+input,
+button,
+i {
+  display: block;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+@keyframes fadeed {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+body {
+  max-width: 100%;
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 auto;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  animation: fadeed 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background: var(--Red400);
+ background-image: url("images/bg-intro-desktop.png");
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+
+
+}
+.container{
+    width: 90%;
+    margin: 10% auto 3%;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    
+    max-width: 100%;
+}
+.container .card{
+    max-width: 100%;
+    width: 100%;
+    margin:  0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+}
+.card h1{
+    color: #fff;
+    width:80%;
+    text-align: left;
+}
+.card p{
+    color: #fff;
+    opacity: 0.8;
+    width:80%;
+}
+.card .tag{
+    background: var(--Purple700);
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .tag p{
+    text-align: center;
+}
+.card form{
+    width: 100%;
+    max-width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 25px;
+    border-radius: 5px;
+}
+form .input_group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    
+}
+.input_group input{
+    width: 100%;
+    padding: 15px ;
+    border: 1px solid #00000054;
+    border-radius: 5px;
+    outline: 0;
+}
+input::placeholder{
+    opacity: 0.5;
+}
+.input_group .error{
+    color: var(--Red400);
+    font-size: 12px;
+    text-align: right;
+    padding: 0 10px;
+    transition: 0.4s;
+
+}
+form button{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: var(--Green400);
+    font-size: 18px;
+    padding: 15px ;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+
+}
+button:hover{
+    opacity: 0.8;
+}
+form .term{
+    color: var(--Gray900);
+    font-size: 10px;
+    text-align: center;
+    margin: 0 auto;
+   
+}
+form .term span{
+    font-weight: 800;
+    padding: 1px;
+    color: var(--Red400);
+}
+
+#successMsg {
+  color: green;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffffd8;
+  backdrop-filter: blur(2px);
+  display: none;
+  padding: 15px;
+  max-width: 400px;
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+  transition: 0.3s ease;
+  border-radius: 10px;
+}
+@media(max-width:980px){
+    .container{
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+         animation: fadeed 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+    }
+    .container .card{
+    
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.card h1,
+.card p{
+    width: 100%;
+    text-align: center;
+}
+}
