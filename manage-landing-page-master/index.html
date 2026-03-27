@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend mentor challange" />
+
+    <meta name="title" content="Frontend mentor challange" />
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/504277832_3201268406688328_2665400811850357163_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53a332&_nc_ohc=RsQ8FB9grKkQ7kNvwGonLMG&_nc_oc=AdmPd8GCYTAODMd6pz2WVgQdmMwXvR1qCrCjHScIpVi03gTbsSe_AlrmKGtdr-cMtVU&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=tRrU1h3rBbsq0J3qFtLYpA&_nc_ss=8&oh=00_AfwyqxVwC123F9IEQQdCB32iwUF2d3SM4esVq7Cn0kMLeA&oe=69BDCFA6"
+    />
+    <!-- font awesome cdn   --------------------------------->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- this is google font section   --------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ionicon link   --------------------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js"
+      integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- favicon section   --------------------------------->
+    <link
+      rel="shortcut icon"
+      href="https://framerusercontent.com/images/QbZPUDfFXUG8DRCcKmLXFnnmWA.png"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <title>Frontend Mentor | Manage landing page</title>
+  </head>
+  <body>
+    <!-- ================================================================================================ -->
+    <div id="mobileNav">
+      <img src="images/icon-close.svg" alt="" class="closed" />
+      <div class="navigation">
+        <a href="#product" class="mobnav-link">product</a>
+        <a href="#aboutUs" class="mobnav-link">about us</a>
+        <a href="#pricing" class="mobnav-link">pricing</a>
+        <a href="#carrer" class="mobnav-link">carrers</a>
+        <a href="#community" class="mobnav-link">Community</a>
+      </div>
+    </div>
+    <header>
+      <div class="head">
+        <div class="logo" href="index.html">
+          <a href="index.html"><img src="images/logo.svg" alt="" /></a>
+          <div id="mood" title="Darkmood">
+            <i class="fa-solid fa-sun sun"></i>
+            <i class="fa-solid fa-moon moon"></i>
+          </div>
+        </div>
+        <nav>
+          <a href="#product" class="nav-link">product</a>
+          <a href="#about" class="nav-link">about us</a>
+          <a href="#pricing" class="nav-link">pricing</a>
+          <a href="#carrer" class="nav-link">carrers</a>
+          <a href="#community" class="nav-link">Community</a>
+        </nav>
+        <button class="primary-btn">Get Started</button>
+
+        <div id="menu">
+          <img src="images/icon-hamburger.svg" alt="" class="hamburger" />
+        </div>
+      </div>
+      <section>
+        <div id="product">
+          <div class="product-container">
+            <div class="productCard">
+              <h1>Bring everyone together to build better products.</h1>
+              <p>
+                Manage makes it simple for software teams to plan day-to-day
+                tasks while keeping the larger team goals in view.
+              </p>
+              <button class="primary-btn">Get Started</button>
+            </div>
+            <div class="productImg">
+              <img src="images/illustration-intro.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <!-- ================================================================================================ -->
+    <main>
+      <section>
+        <div id="about">
+          <div class="about-container">
+            <div class="about-content active">
+              <div class="about-card">
+                <span>A</span>
+                <h2>What’s different about Manage?</h2>
+                <p>
+                  Manage provides all the functionality your team needs, without
+                  the complexity. Our software is tailor-made for modern digital
+                  product teams.
+                </p>
+              </div>
+              <div class="about-card">
+                <div class="about-card-tab">
+                  <h3><span>01</span>Track company-wide progress</h3>
+                  <p>
+                    See how your day-to-day tasks fit into the wider vision. Go
+                    from tracking progress at the milestone level all the way
+                    done to the smallest of details. Never lose sight of the
+                    bigger picture again.
+                  </p>
+                </div>
+                <div class="about-card-tab">
+                  <h3><span> 02</span> Advanced built-in reports</h3>
+                  <p>
+                    Set internal delivery estimates and track progress toward
+                    company goals. Our customisable dashboard helps you build
+                    out the reports you need to keep key stakeholders informed.
+                  </p>
+                </div>
+                <div class="about-card-tab">
+                  <h3><span> 03</span> Everything you need in one place</h3>
+                  <p>
+                    Stop jumping from one service to another to communicate,
+                    store files, track tasks and share documents. Manage offers
+                    an all-in-one team productivity solution.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="about-content">
+              <div class="about-card">
+                <span>B</span>
+                <h2>Why teams choose Manage?</h2>
+                <p>
+                  Manage helps teams stay organized and focused by bringing all
+                  projects, tasks, and updates into one simple, easy-to-use
+                  platform. No more switching between multiple tools.
+                </p>
+              </div>
+              <div class="about-card">
+                <div class="about-card-tab">
+                  <h3><span>01</span> Collaborative task management</h3>
+                  <p>
+                    Easily assign tasks, set priorities, and stay aligned with
+                    your entire team. Manage keeps everyone on the same page and
+                    reduces unnecessary back-and-forth.
+                  </p>
+                </div>
+
+                <div class="about-card-tab">
+                  <h3><span>02</span> Seamless integrations</h3>
+                  <p>
+                    Connect Manage with your favorite tools to create a workflow
+                    that fits your needs perfectly. Enjoy smooth integrations
+                    without the usual setup headaches.
+                  </p>
+                </div>
+
+                <div class="about-card-tab">
+                  <h3><span>03</span> Real-time updates</h3>
+                  <p>
+                    Stay in sync at all times with real-time notifications.
+                    Instantly see changes, progress, and new activity across
+                    your workspace.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-btns">
+            <div class="btn active">prev</div>
+            <div class="btn">next</div>
+          </div>
+        </div>
+        <div id="faq">
+          <div class="faq-container">
+            <div class="faq-card active">
+              <div class="faq-headline">
+                <h4>Q1: What makes your service different from others?</h4>
+                <i class="fa-solid fa-angle-up foq-icon"></i>
+              </div>
+              <div class="faq-ans">
+                <p>
+                  We focus on simplicity and speed. Our tools are designed to
+                  reduce your workload, not add to it. Everything is clean, easy
+                  to understand, and beginner-friendly.
+                </p>
+              </div>
+            </div>
+            <div class="faq-card">
+              <div class="faq-headline">
+                <h4>Q2: Can I use the platform for a large team?</h4>
+                <i class="fa-solid fa-angle-up foq-icon"></i>
+              </div>
+              <div class="faq-ans">
+                <p>
+                  Yes. You can add unlimited team members, manage roles, and
+                  track tasks in real time. It works smoothly for both small and
+                  big teams.
+                </p>
+              </div>
+            </div>
+            <div class="faq-card">
+              <div class="faq-headline">
+                <h4>Q3: Do I need to install any software?</h4>
+                <i class="fa-solid fa-angle-up foq-icon"></i>
+              </div>
+              <div class="faq-ans">
+                <p>
+                  No installation is required. Everything works directly in your
+                  browser. Just sign up and start using the dashboard instantly.
+                </p>
+              </div>
+            </div>
+            <div class="faq-card">
+              <div class="faq-headline">
+                <h4>Q4: What if I need help getting started?</h4>
+                <i class="fa-solid fa-angle-up foq-icon"></i>
+              </div>
+              <div class="faq-ans">
+                <p>
+                  Absolutely. We follow industry-standard security practices,
+                  encryption, and regular backups to keep your data safe.
+                </p>
+              </div>
+            </div>
+            <div class="faq-card">
+              <div class="faq-headline">
+                <h4>Q5: Will this tool help me stay organized</h4>
+                <i class="fa-solid fa-angle-up foq-icon"></i>
+              </div>
+              <div class="faq-ans">
+                <p>
+                  Yes. The dashboard gives you a full overview of tasks,
+                  progress, deadlines, and team activity—all in one place. We
+                  roll out improvements regularly based on user feedback,
+                  performance enhancements, and new feature requests.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ================================================================================================ -->
+    <footer>
+      <section id="price">
+        <div id="pricing">
+          <div class="price-content">
+            <h2>Simplify how your team works today.</h2>
+          </div>
+          <div class="price-btn">
+            <button class="p-btn">Get Started</button>
+          </div>
+        </div>
+        <div class="priceBody">
+          <div class="priceToggle">
+            <h4>Our Pricing</h4>
+            <div class="tooglecard">
+              <p>Annually</p>
+              <div class="toggleBtn">
+                <div class="dot"></div>
+              </div>
+              <p>Monthly</p>
+            </div>
+          </div>
+          <div class="price-container">
+            <div class="priceCard">
+              <h5>basic</h5>
+              <p id="price1"><span>$</span>19.99</p>
+              <p>500 GB Storage</p>
+              <p>2 Users Allowed</p>
+              <p>Send up to 3 GB</p>
+              <button class="primary-btn">Learn More</button>
+            </div>
+            <div class="priceCard blu">
+              <h5>Professional</h5>
+              <p id="price2"><span>$</span>24.99</p>
+              <p>1 TB Storage</p>
+              <p>5 Users Allowed</p>
+              <p>Send up to 10 GB</p>
+              <button class="secondary-btn">Learn More</button>
+            </div>
+            <div class="priceCard">
+              <h5>Master</h5>
+              <p id="price3"><span>$</span>39.99</p>
+              <p>2 TB Storage</p>
+              <p>10 Users Allowed</p>
+              <p>Send up to 20 GB</p>
+              <button class="primary-btn">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <!-- 
+3. form /email
+4. testimonial card
+5. pricing 
+
+  What they’ve said
+
+  Anisha Li
+  “Manage has supercharged our team’s workflow. The ability to maintain 
+  visibility on larger milestones at all times keeps everyone motivated.”
+
+  Ali Bravo
+  “We have been able to cancel so many other subscriptions since using 
+  Manage. There is no more cross-channel confusion and everyone is much 
+  more focused.”
+
+  Richard Watts
+  “Manage allows us to provide structure and process. It keeps us organized 
+  and focused. I can’t stop recommending them to everyone I talk to!”
+
+  Shanai Gough
+  “Their software allows us to track, manage and collaborate on our projects 
+  from anywhere. It keeps the whole team in-sync without being intrusive.”
+
+ 
+  
+  Get Started
+
+  Home
+  Pricing
+  Products
+  About Us
+  Careers
+  Community
+  Privacy Policy
+
+  Updates in your inbox…
+  Go
+
+  Copyright 2020. All Rights Reserved -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
