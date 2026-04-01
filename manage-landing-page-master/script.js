@@ -59,7 +59,7 @@ tabBtn.forEach((btn, i) => {
         btn.classList.add("active");
 
         aboutContent.forEach(tab => {
-            tab.classList.remove("active");
+            tab.classList.remove("active");      
         });
         aboutContent[i].classList.add("active");
     });
@@ -91,12 +91,12 @@ pBtn.addEventListener("click", () => {
       const price3 = document.getElementById("price3");
 
     
-      let yearly = true;
+      let yearly = false;
 
       toggleBtn.addEventListener("click", () => {
         yearly = !yearly; // state change
 
-        if (!yearly) {
+        if (yearly) {
           // Dot left side
           dot.style.transform = "translateX(-15px)";
 

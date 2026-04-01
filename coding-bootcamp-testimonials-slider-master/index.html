@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend mentor challange" />
+
+    <meta name="title" content="Frontend mentor challange" />
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/504277832_3201268406688328_2665400811850357163_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53a332&_nc_ohc=RsQ8FB9grKkQ7kNvwGonLMG&_nc_oc=AdmPd8GCYTAODMd6pz2WVgQdmMwXvR1qCrCjHScIpVi03gTbsSe_AlrmKGtdr-cMtVU&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=tRrU1h3rBbsq0J3qFtLYpA&_nc_ss=8&oh=00_AfwyqxVwC123F9IEQQdCB32iwUF2d3SM4esVq7Cn0kMLeA&oe=69BDCFA6"
+    />
+    <!-- font awesome cdn   --------------------------------->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- this is google font section   --------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ionicon link   --------------------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js"
+      integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- favicon section   --------------------------------->
+    <link
+      rel="shortcut icon"
+      href="https://framerusercontent.com/images/QbZPUDfFXUG8DRCcKmLXFnnmWA.png"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+     <main>
+      <div class="btnBox">
+        
+        <div class="nextBtn">
+          <img src="images/icon-prev.svg" alt="" />
+        </div>
+        <div class="prevBtn">
+          <img src="images/icon-next.svg" alt="" />
+        </div>
+      </div>
+    <section>
+     
+      <div class="container">
+        <div class="card">
+          <img src="images/pattern-quotes.svg" alt="" class="quote">
+          
+          
+          <div class="desc">
+            <h3>
+            "I’ve been interested in coding for a while but never taken the
+            jump, until now. I couldn’t recommend this course enough. I’m now in
+            the job of my dreams and so excited about the future."
+          </h3>
+            <div class="nameBio">
+              <div class="name">Tanya Sinclair</div>
+            <div class="bio">UX Engineer</div>
+            </div>
+          </div>
+          <img src="images/image-tanya.jpg" alt="" class="profile" />
+        </div>
+        <div class="card">
+          <img src="images/pattern-quotes.svg" alt="" class="quote">
+          
+          
+          <div class="desc">
+            <h3>
+            "If
+    you want to lay the best foundation possible I’d recommend taking this
+    course. The depth the instructors go into is incredible. I now feel so
+    confident about starting up as a professional developer. "
+          </h3>
+            <div class="nameBio">
+              <div class="name">John Tarkpor</div>
+            <div class="bio">Junior Front-end Developer</div>
+            </div>
+          </div>
+          <img src="images/image-john.jpg" alt="" class="profile" />
+        </div>
+      </div>
+    </section>
+     </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </footer>
+
+    <script>
+      const container = document.querySelector(".container");
+      const card = document.querySelectorAll(".card");
+      const nextBtn = document.querySelector(".nextBtn");
+      const prevBtn = document.querySelector(".prevBtn");
+
+      let index = 0;
+
+      function update(){
+        container.style.transform = `translateX(-${index * 100}%)`;
+
+      }
+      update();
+
+
+      nextBtn.addEventListener("click", () => {
+        if(index < card.length -1){
+          index++;
+          update();
+        }
+      });
+      prevBtn.addEventListener("click", () => {
+        if(index > 0){
+          index--;
+          update();
+        }
+      });
+    </script>
+  </body>
+</html>
+<!-- “  ”   “ ” 
+     -->
