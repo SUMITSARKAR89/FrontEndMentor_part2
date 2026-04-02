@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend mentor challange" />
+
+    <meta name="title" content="Frontend mentor challange" />
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/504277832_3201268406688328_2665400811850357163_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53a332&_nc_ohc=RsQ8FB9grKkQ7kNvwGonLMG&_nc_oc=AdmPd8GCYTAODMd6pz2WVgQdmMwXvR1qCrCjHScIpVi03gTbsSe_AlrmKGtdr-cMtVU&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=tRrU1h3rBbsq0J3qFtLYpA&_nc_ss=8&oh=00_AfwyqxVwC123F9IEQQdCB32iwUF2d3SM4esVq7Cn0kMLeA&oe=69BDCFA6"
+    />
+    <!-- font awesome cdn   --------------------------------->
+
+    <!-- this is google font section   --------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ionicon link   --------------------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js"
+      integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- favicon section   --------------------------------->
+    <link
+      rel="shortcut icon"
+      href="https://framerusercontent.com/images/QbZPUDfFXUG8DRCcKmLXFnnmWA.png"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <title>Frontend Mentor | Interactive pricing component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <img src="images/pattern-circles.svg" alt="" class="bg" />
+    <section>
+      <div class="container">
+        <h2>Simple, traffic-based pricing</h2>
+        <h4>Sign-up for our 30-day trial. No credit card required.</h4>
+        <div class="card">
+          <div class="top">
+            <p id="view">100K Pageviews</p>
+
+            <p id="price"><span>$16.00</span>/Month</p>
+          </div>
+          <input type="range" name="range" id="slider" max="12" min="0" />
+          <div class="billing">
+            <p>Monthly Billing</p>
+            <label class="switch">
+              <input type="checkbox" id="toggle" />
+              <div class="round"></div>
+            </label>
+            <p>Yearly Billing <span class="percent">25% discount</span></p>
+          </div>
+
+          <div class="btnCard">
+            <ul>
+              <li>
+                <img src="images/icon-check.svg" alt="" />
+                <p>Unlimited websites</p>
+              </li>
+              <li>
+                <img src="images/icon-check.svg" alt="" />
+                <p>100% data ownership</p>
+              </li>
+              <li>
+                <img src="images/icon-check.svg" alt="" />
+                <p>Email reports</p>
+              </li>
+            </ul>
+
+            <button>Start my trial</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">sumit sarkar</a>.
+    </footer>
+    <script>
+      const slider = document.getElementById("slider");
+      const view = document.getElementById("view");
+      const price = document.getElementById("price");
+      const toggle = document.getElementById("toggle");
+
+      let data = [
+        { view: "5K", price: 2 },
+        { view: "10K", price: 4 },
+        { view: "20K", price: 8 },
+        { view: "40K", price: 12 },
+        { view: "100K", price: 16 },
+        { view: "200K", price: 20 },
+        { view: "400K", price: 24 },
+        { view: "800K", price: 28 },
+        { view: "1M", price: 32 },
+        { view: "2M", price: 36 },
+        { view: "4M", price: 40 },
+        { view: "10M", price: 44 },
+        { view: "20M", price: 50 },
+      ];
+      function update() {
+        let value = slider.value;
+        let basePrice = data[value].price;
+        let finalPrice = basePrice;
+
+        if (toggle.checked) {
+          finalPrice = basePrice * 0.75;
+        }
+
+        view.innerHTML = data[value].view + " PAGEVIEWS";
+        price.innerHTML =
+          "<span>" + "$" + finalPrice.toFixed(2) + "</span>" + "/Month";
+      }
+      update();
+
+      function updateColor() {
+        let range = slider.value;
+        let max = slider.max;
+        let percent = (range / max) * 100;
+
+        slider.style.background = `
+    linear-gradient(to right, 
+    #20dbc9 ${percent}%, 
+    #e5e7ef ${percent}%)
+  `;
+      }
+      updateColor();
+
+      slider.addEventListener("input", () => {
+        update();
+        updateColor();
+      })
+      toggle.addEventListener("change", update);
+    </script>
+  </body>
+</html>
