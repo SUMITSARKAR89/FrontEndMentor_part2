@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend mentor challange" />
+
+    <meta name="title" content="Frontend mentor challange" />
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/504277832_3201268406688328_2665400811850357163_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53a332&_nc_ohc=RsQ8FB9grKkQ7kNvwGonLMG&_nc_oc=AdmPd8GCYTAODMd6pz2WVgQdmMwXvR1qCrCjHScIpVi03gTbsSe_AlrmKGtdr-cMtVU&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=tRrU1h3rBbsq0J3qFtLYpA&_nc_ss=8&oh=00_AfwyqxVwC123F9IEQQdCB32iwUF2d3SM4esVq7Cn0kMLeA&oe=69BDCFA6"
+    />
+    <!-- font awesome cdn   --------------------------------->
+
+    <!-- this is google font section   --------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ionicon link   --------------------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js"
+      integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- favicon section   --------------------------------->
+    <link
+      rel="shortcut icon"
+      href="https://framerusercontent.com/images/QbZPUDfFXUG8DRCcKmLXFnnmWA.png"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <h1><span>spli</span><span>tter</span></h1>
+
+    <section>
+      <div class="calculaorApp">
+        <div class="inputContainer">
+          <div class="input-card">
+            <label for="">bill</label>
+            <input type="number" name="" id="bill" placeholder="00" />
+            <i class="fa-solid fa-dollar-sign"></i>
+          </div>
+          <div class="btn-card">
+            <label for="">select tip %</label>
+            <div id="btn-grp">
+              <span class="tip">5%</span>
+              <span class="tip">10%</span>
+              <span class="tip">15%</span>
+              <span class="tip">25%</span>
+              <span class="tip">50%</span>
+              <input
+                type="number"
+                name=""
+                id="custom"
+                placeholder="CUSTOM"
+                class="custom"
+              />
+            </div>
+          </div>
+          <div class="people-card">
+            <label for="">number of people</label>
+            <input type="number" name="" id="people" placeholder="0" />
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+        <div class="resultContainer">
+          <div class="tip-card">
+            <p>tip amount <small>/ person</small></p>
+            <span id="tip">$0.00</span>
+          </div>
+          <div class="total-card">
+            <p>total <small>/ person</small></p>
+            <span id="total">$0.00</span>
+          </div>
+
+          <button type="reset" id="btn">reset</button>
+          <input type="button" value="print" id="print" />
+        </div>
+      </div>
+    </section>
+    <div class="popup" id="popup">
+      <div class="popup-card">
+        <span class="close" id="close">&times;</span>
+
+        <h3>Bill Summary</h3>
+        <p id="pBill"></p>
+        <p id="pPeople"></p>
+        <p id="pCustom"></p>
+        <p id="pTipsBtn"></p>
+        <p id="pTip"></p>
+        <p id="pTotal"></p>
+      </div>
+    </div>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">sumit sarkar</a>.
+    </footer>
+
+    <script>
+      const tipsBtn = document.querySelectorAll(".tip");
+      const customInput = document.getElementById("custom");
+      const billInput = document.getElementById("bill");
+      const peopleInput = document.getElementById("people");
+
+      const reset = document.getElementById("btn");
+      const tip = document.getElementById("tip");
+      const total = document.getElementById("total");
+
+      let index = 0;
+
+      //===========this is all btn========
+      tipsBtn.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          tipsBtn.forEach((b) => {
+            b.classList.remove("active");
+          });
+          btn.classList.add("active");
+
+          let text = btn.innerText;
+          let textReplace = text.replace("%", "");
+          index = Number(textReplace);
+          calculaor();
+        });
+      });
+      //===========this is custom input========
+      customInput.addEventListener("input", () => {
+        tipsBtn.forEach((b) => {
+          b.classList.remove("active");
+        });
+
+        let customValue = customInput.value;
+        index = Number(customValue);
+        calculaor();
+      });
+
+      function calculaor() {
+        let billValue = billInput.value;
+        let peopleValue = peopleInput.value;
+        let people = Number(peopleValue);
+        let bill = Number(billValue);
+
+        if (bill > 0 && people > 0) {
+          let indexTip = (bill * (index / 100)) / people;
+          let indexTotal = bill / people + indexTip;
+
+          tip.innerText = "$" + indexTip.toFixed(2);
+          total.innerText = "$" + indexTotal.toFixed(2);
+        }
+      }
+
+      //=========== Inputs ===========
+      billInput.addEventListener("input", calculaor);
+      peopleInput.addEventListener("input", calculaor);
+      //=========== Reset ===========
+      reset.addEventListener("click", () => {
+        tipsBtn.forEach((b) => {
+          b.classList.remove("active");
+        });
+        billInput.value = "";
+        customInput.value = "";
+        peopleInput.value = "";
+        tip.innerText = "$ 0.00";
+        total.innerText = "$ 0.00";
+      });
+
+      const popup = document.getElementById("popup");
+      const closeBtn = document.getElementById("close");
+      const print = document.getElementById("print");
+
+      const pBill = document.getElementById("pBill");
+      const pPeople = document.getElementById("pPeople");
+      const pCustom = document.getElementById("pCustom");
+      
+      const pTip = document.getElementById("pTip");
+      const pTotal = document.getElementById("pTotal");
+
+      print.addEventListener("click", () => {
+        popup.style.display = "flex";
+
+        let bill = billInput.value;
+        let people = peopleInput.value;
+        let custom = customInput.value;
+
+        pBill.innerText = "Bill Amount : $" + bill;
+        pPeople.innerText = "Total People : " + people;
+        pCustom.innerText = "Custom Tips : $ " + custom;
+        pTip.innerText = "Tips Per Person : " + tip.innerText;
+        pTotal.innerText = "Total Per Person : " + total.innerText;
+        
+
+        
+        tipsBtn.forEach((b) => {
+          b.classList.remove("active");
+        });
+        billInput.value = "";
+        customInput.value = "";
+        peopleInput.value = "";
+        tip.innerText = "$ 0.00";
+        total.innerText = "$ 0.00";
+
+
+      });
+      closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
