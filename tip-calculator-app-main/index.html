@@ -190,6 +190,7 @@
         total.innerText = "$ 0.00";
       });
 
+      //======================================for popUp==========
       const popup = document.getElementById("popup");
       const closeBtn = document.getElementById("close");
       const print = document.getElementById("print");
@@ -197,7 +198,6 @@
       const pBill = document.getElementById("pBill");
       const pPeople = document.getElementById("pPeople");
       const pCustom = document.getElementById("pCustom");
-      
       const pTip = document.getElementById("pTip");
       const pTotal = document.getElementById("pTotal");
 
@@ -208,24 +208,21 @@
         let people = peopleInput.value;
         let custom = customInput.value;
 
-        pBill.innerText = "Bill Amount : $" + bill;
         pPeople.innerText = "Total People : " + people;
+        pBill.innerText = "Bill Amount : $" + bill;
         pCustom.innerText = "Custom Tips : $ " + custom;
         pTip.innerText = "Tips Per Person : " + tip.innerText;
         pTotal.innerText = "Total Per Person : " + total.innerText;
-        
 
-        
         tipsBtn.forEach((b) => {
           b.classList.remove("active");
         });
+        
         billInput.value = "";
         customInput.value = "";
         peopleInput.value = "";
         tip.innerText = "$ 0.00";
         total.innerText = "$ 0.00";
-
-
       });
       closeBtn.addEventListener("click", () => {
         popup.style.display = "none";
