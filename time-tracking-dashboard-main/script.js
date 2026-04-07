@@ -89,8 +89,8 @@ text = "Last Month - ";
     const previous = data[i].timeframes[t].previous;
 
     // inject data in each card
-    card.querySelector(".title").innerText = `${title}`;
-    card.querySelector("h1").innerText = `${current}hrs`;
+    card.querySelector(".title").innerText = title ;
+    card.querySelector("h1").innerText = current + "hrs";
     card.querySelector("p").innerText = text + previous + "hrs";
   });
 }

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend mentor challange" />
+
+    <meta name="title" content="Frontend mentor challange" />
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/504277832_3201268406688328_2665400811850357163_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53a332&_nc_ohc=RsQ8FB9grKkQ7kNvwGonLMG&_nc_oc=AdmPd8GCYTAODMd6pz2WVgQdmMwXvR1qCrCjHScIpVi03gTbsSe_AlrmKGtdr-cMtVU&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=tRrU1h3rBbsq0J3qFtLYpA&_nc_ss=8&oh=00_AfwyqxVwC123F9IEQQdCB32iwUF2d3SM4esVq7Cn0kMLeA&oe=69BDCFA6"
+    />
+    <!-- font awesome cdn   --------------------------------->
+
+    <!-- this is google font section   --------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ionicon link   --------------------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js"
+      integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- favicon section   --------------------------------->
+    <link
+      rel="shortcut icon"
+      href="https://framerusercontent.com/images/QbZPUDfFXUG8DRCcKmLXFnnmWA.png"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <div id="mobileCard">
+      <div class="mobileNav">
+        <img src="images/icon-close-menu.svg" alt="" class="menuClose" />
+        <div class="mobileNavlinks">
+          <div class="mobileNav-link">
+            <a href="">feature <i class="fa-solid fa-angle-up"></i></a>
+
+            <div class="dropdown">
+              <li>
+                <img src="images/icon-todo.svg" alt="" />
+                <span>Todo list</span>
+              </li>
+              <li>
+                <img src="images/icon-calendar.svg" alt="" />
+                <span>calendar</span>
+              </li>
+              <li>
+                <img src="images/icon-reminders.svg" alt="" />
+                <span>reminders</span>
+              </li>
+              <li>
+                <img src="images/icon-planning.svg" alt="" />
+                <span>planning</span>
+              </li>
+            </div>
+          </div>
+          <div class="mobileNav-link">
+            <a href="">company <i class="fa-solid fa-angle-up"></i></a>
+            <div class="dropdown">
+              <span>history</span>
+              <span>our team</span>
+              <span>blog</span>
+            </div>
+          </div>
+          <a href="" style="padding: 15px 12px">careers</a>
+          <a href="" style="padding: 15px 12px">about</a>
+          <div class="mobileNavBtns">
+            <a href="">login</a>
+            <a href="" class="btn">resistar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header>
+      <div class="head">
+        <div id="dropDownF">
+          <li>
+            <img src="images/icon-todo.svg" alt="" />
+            <a href="">todo list</a>
+          </li>
+          <li>
+            <img src="images/icon-calendar.svg" alt="" />
+            <a href="">calendar</a>
+          </li>
+          <li>
+            <img src="images/icon-reminders.svg" alt="" />
+            <a href="">reminders</a>
+          </li>
+          <li>
+            <img src="images/icon-planning.svg" alt="" />
+            <a href="">planning</a>
+          </li>
+        </div>
+
+        <div id="dropDownC">
+          <span>history</span>
+          <span>our team</span>
+          <span>blog</span>
+        </div>
+        <div class="nav-card">
+          <img src="images/logo.svg" alt="" class="logo" />
+          <nav>
+            <div class="navLink feature">
+              <a href="#" class="">feature</a>
+              <i class="fa-solid fa-angle-up featureUp"></i>
+            </div>
+            <div class="navLink company">
+              <a href="#" class="">company</a>
+              <i class="fa-solid fa-angle-up companyUp"></i>
+            </div>
+            <a href="#">careers</a>
+            <a href="#">about</a>
+          </nav>
+        </div>
+        <div class="resisterBtn">
+          <a href="">login</a>
+          <a href="" class="btn">resister</a>
+        </div>
+        <div id="menuCard">
+          <img src="images/icon-menu.svg" alt="" class="menuOpen" />
+          <!-- <img src="images/icon-close-menu.svg" alt="" class="menuClose"> -->
+        </div>
+      </div>
+      <div class="hero">
+        <div class="heroContainer">
+          <div class="heroCard">
+            <h1>Make <span>remote work</span></h1>
+            <p>
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </p>
+            <a href="" class="btn"> Learn more </a>
+            <div class="marquaree">
+              <div class="marqTruck">
+                <img
+                  src="images/client-audiophile.svg"
+                  alt=""
+                  class="marqLogo"
+                />
+                <img src="images/client-databiz.svg" alt="" class="marqLogo" />
+                <img src="images/client-maker.svg" alt="" class="marqLogo" />
+                <img src="images/client-meet.svg" alt="" class="marqLogo" />
+                <img
+                  src="images/client-audiophile.svg"
+                  alt=""
+                  class="marqLogo"
+                />
+                <img src="images/client-databiz.svg" alt="" class="marqLogo" />
+                <img src="images/client-maker.svg" alt="" class="marqLogo" />
+                <img src="images/client-meet.svg" alt="" class="marqLogo" />
+                <img
+                  src="images/client-audiophile.svg"
+                  alt=""
+                  class="marqLogo"
+                />
+                <img src="images/client-databiz.svg" alt="" class="marqLogo" />
+                <img src="images/client-maker.svg" alt="" class="marqLogo" />
+                <img src="images/client-meet.svg" alt="" class="marqLogo" />
+              </div>
+            </div>
+          </div>
+          <div class="heroImg">
+            <img src="images/image-hero-desktop.png" alt="" class="deskImg" />
+            <img src="images/image-hero-mobile.png" alt="" class="mobileImg" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </footer>
+
+    <script>
+      const dropDownF = document.getElementById("dropDownF");
+      const feature = document.querySelector(".feature");
+      const fIcon = document.querySelector(".featureUp");
+
+      const dropDownC = document.getElementById("dropDownC");
+      const company = document.querySelector(".company");
+      const CIcon = document.querySelector(".companyUp");
+
+      feature.addEventListener("click", () => {
+        const isOpen = dropDownF.style.display === "flex";
+
+        dropDownF.style.display = isOpen ? "none" : "flex";
+        fIcon.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+      });
+      company.addEventListener("click", () => {
+        const isOpen = dropDownC.style.display === "flex";
+        dropDownC.style.display = isOpen ? "none" : "flex";
+        CIcon.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+      });
+
+      const mobileCard = document.getElementById("mobileCard");
+      const closeMenu = document.querySelector(".menuClose");
+      const openMenu = document.querySelector(".menuOpen");
+
+      openMenu.addEventListener("click", () => {
+        mobileCard.style.right = "0";
+      });
+      closeMenu.addEventListener("click", () => {
+        mobileCard.style.right = "-100%";
+
+      })
+
+
+    </script>
+  </body>
+</html>
