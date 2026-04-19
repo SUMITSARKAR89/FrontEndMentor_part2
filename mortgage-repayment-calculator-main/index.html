@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend mentor challange" />
+
+    <meta name="title" content="Frontend mentor challange" />
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/504277832_3201268406688328_2665400811850357163_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53a332&_nc_ohc=RsQ8FB9grKkQ7kNvwGonLMG&_nc_oc=AdmPd8GCYTAODMd6pz2WVgQdmMwXvR1qCrCjHScIpVi03gTbsSe_AlrmKGtdr-cMtVU&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=tRrU1h3rBbsq0J3qFtLYpA&_nc_ss=8&oh=00_AfwyqxVwC123F9IEQQdCB32iwUF2d3SM4esVq7Cn0kMLeA&oe=69BDCFA6"
+    />
+    <!-- font awesome cdn   --------------------------------->
+
+    <!-- this is google font section   --------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ionicon link   --------------------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js"
+      integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- favicon section   --------------------------------->
+    <link
+      rel="shortcut icon"
+      href="https://framerusercontent.com/images/QbZPUDfFXUG8DRCcKmLXFnnmWA.png"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <form action="">
+          <div class="header">
+            <h3>Mortgage Calculator</h3>
+            <a class="resetBtn" id="resetBtn"> clear all </a>
+          </div>
+          <div class="calculator">
+            <div class="input-group">
+              <label for="">Mortgage Amount</label>
+              <div class="inputBox">
+                <span class="symbol">£</span>
+                <input type="number" name="" id="amount" placeholder="0" />
+              </div>
+              <small class="error" id="errorAmount"></small>
+            </div>
+            <div class="term-rate">
+              <div class="input-group">
+                <label for="">Mortgage Term</label>
+                <div class="inputBox">
+                  <input type="number" name="" id="term" placeholder="0" />
+                  <span class="symbol">years</span>
+                </div>
+                <small class="error" id="errorTerm"></small>
+              </div>
+              <div class="input-group">
+                <label for="">Interest Rate</label>
+                <div class="inputBox">
+                  <input type="number" name="" id="rate" placeholder="0" />
+                  <span class="symbol">%</span>
+                </div>
+                <small class="error" id="errorRate"></small>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="">Mortage Type</label>
+              <div class="radio-group">
+                <label class="set">
+                  <input type="radio" name="type" value="repayment" />
+                  Repayment
+                </label>
+                <label class="set">
+                  <input type="radio" name="type" value="interest" /> Interest
+                  Only
+                </label>
+              </div>
+              <small class="error" id="errorType"></small>
+            </div>
+          </div>
+          <button type="submit" id="btn" class="btn">
+            <img src="assets/images/icon-calculator.svg" alt="" />
+            <p>Calculate Repayments</p>
+          </button>
+        </form>
+
+        <div class="card">
+          <div class="resultBox" id="resultBox">
+           
+             <div class="show">
+              <img src="assets/images/illustration-empty.svg" alt="" />
+              <h3>Results shown here</h3>
+              <p>
+                Complete the form and click “calculate repayments” to see what
+                your monthly repayments would be.
+              </p>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor </a
+      >. Coded by <a href="#"> Sumit sakar</a>.
+    </footer>
+    <script>
+      const resetBtn = document.getElementById("resetBtn");
+      const submitBtn = document.getElementById("btn");
+      const amountInput = document.getElementById("amount");
+      const termInput = document.getElementById("term");
+      const rateInput = document.getElementById("rate");
+
+      const resultBox = document.getElementById("resultBox");
+
+      const errorType = document.getElementById("errorType");
+      const errorRate = document.getElementById("errorRate");
+      const errorTerm = document.getElementById("errorTerm");
+      const errorAmount = document.getElementById("errorAmount");
+
+      function showError(inputElem, errorElem, massage) {
+        inputElem.parentElement.classList.add("error");
+        errorElem.textContent = massage;
+      }
+
+      function clearError(inputElem, errorElem) {
+        inputElem.parentElement.classList.remove("error");
+        errorElem.textContent = "";
+      }
+
+      submitBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const amount = Number(amountInput.value);
+        const term = Number(termInput.value);
+        const rate = Number(rateInput.value);
+        const type = document.querySelector("input[name='type']:checked");
+
+        let valid = true;
+
+        if (!amount || amount <= 0) {
+          showError(amountInput, errorAmount, "Field must not be Empty");
+          valid = false;
+        } else {
+          clearError(amountInput, errorAmount);
+        }
+
+        if (!term || term <= 0) {
+          showError(termInput, errorTerm, "Field must not be Empty");
+          valid = false;
+        } else {
+          clearError(termInput, errorTerm);
+        }
+
+        if (!rate || rate <= 0) {
+          showError(rateInput, errorRate, "Field must not be Empty");
+          valid = false;
+        } else {
+          clearError(rateInput, errorRate);
+        }
+
+        if (!type) {
+          errorType.textContent = "Choose a mortgage type";
+          valid = false;
+        } else {
+          errorType.textContent = "";
+        }
+        if (!valid) return;
+
+        //---------------------------------------------
+        const monthRate = rate / 100 / 12;
+        const totalMonth = term * 12;
+
+        let m = 0;
+        let t = 0;
+
+        if (type.value === "repayment") {
+          m = (amount * monthRate) / (1 - Math.pow(1 + monthRate, -totalMonth));
+          t = m * totalMonth;
+        } else {
+          m = amount * monthRate;
+          t = amount + m * totalMonth;
+        }
+
+        showResult(m, t);
+      });
+
+      function showResult(month, total) {
+        resultBox.innerHTML = `
+         <div class="hide">
+              <h4>your results</h4>
+              <p>
+                Your results Your results are shown below based on the
+                information you provided. To adjust the results, edit the form
+                and click “calculate repayments” again.
+              </p>
+              <div class="hidecard">
+                <div class="card1">
+                  <p>Your monthly repayments</p>
+                  <h1>£${month.toFixed(2)}</h1>
+                </div>
+                <div class="line"></div>
+                <div class="card2">
+                  <p>
+                    Your monthly repayments Total you'll repay over the term
+                  </p>
+                  <h4>£${total.toFixed(2)}</h4>
+                </div>
+              </div>
+            </div>
+    
+  `;
+      }
+
+      //---------------------------------------------
+      resetBtn.addEventListener("click", () => {
+        amountInput.value = "";
+        termInput.value = "";
+        rateInput.value = "";
+        document
+          .querySelectorAll("input[name='type']")
+          .forEach((r) => (r.checked = false));
+
+        clearError(amountInput, errorAmount);
+        clearError(termInput, errorTerm);
+        clearError(rateInput, errorRate);
+        errorType.textContent = "";
+
+        document.querySelectorAll(".inputBox").forEach((b) => {
+          b.classList.remove("error");
+        });
+
+        resultBox.innerHTML = `
+         <div class="show">
+             <img src="assets/images/illustration-empty.svg" alt="" />
+            <h3>Results shown here</h3>
+            <p>
+              Complete the form and click “calculate repayments” to see what
+              your monthly repayments would be.
+            </p>
+           </div>
+        `;
+      });
+    </script>
+  </body>
+</html>
+
+

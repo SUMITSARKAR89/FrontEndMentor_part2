@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend mentor challange" />
+
+    <meta name="title" content="Frontend mentor challange" />
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/504277832_3201268406688328_2665400811850357163_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53a332&_nc_ohc=RsQ8FB9grKkQ7kNvwGonLMG&_nc_oc=AdmPd8GCYTAODMd6pz2WVgQdmMwXvR1qCrCjHScIpVi03gTbsSe_AlrmKGtdr-cMtVU&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=tRrU1h3rBbsq0J3qFtLYpA&_nc_ss=8&oh=00_AfwyqxVwC123F9IEQQdCB32iwUF2d3SM4esVq7Cn0kMLeA&oe=69BDCFA6"
+    />
+    <!-- font awesome cdn   --------------------------------->
+
+    <!-- this is google font section   --------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ionicon link   --------------------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js"
+      integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- favicon section   --------------------------------->
+    <link
+      rel="shortcut icon"
+      href="https://framerusercontent.com/images/QbZPUDfFXUG8DRCcKmLXFnnmWA.png"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <title>Frontend Mentor | Age calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <section>
+      <form action="">
+        <div class="input-field">
+          <label for="" class="label">day</label>
+          <input type="text" id="day" placeholder="DD" maxlength="2" />
+          <small class="error" id="dayError"></small>
+        </div>
+        <div class="input-field">
+          <label for="" class="label">month</label>
+          <input
+            type="text"
+            name=""
+            id="month"
+            placeholder="MM"
+            maxlength="2"
+          />
+          <small class="error" id="monthError"></small>
+        </div>
+        <div class="input-field">
+          <label for="" class="label">year</label>
+          <input
+            type="text"
+            name=""
+            id="year"
+            placeholder="YYYY"
+            maxlength="4"
+          />
+          <small class="error" id="yearError"></small>
+        </div>
+      </form>
+      <button type="submit" class="btn">
+        <img src="assets/images/icon-arrow.svg" alt="" />
+      </button>
+      <div class="cards">
+        <div class="card">
+          <span id="result-year">--</span>
+          <p>Years</p>
+        </div>
+        <div class="card">
+          <span id="result-month">--</span>
+          <p>months</p>
+        </div>
+        <div class="card">
+          <span id="result-day">--</span>
+          <p>days</p>
+        </div>
+      </div>
+      <a id="reset">clear</a>
+    </section>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </footer>
+
+    <script>
+      //============================input-------------
+      const dayInput = document.getElementById("day");
+      const monthInput = document.getElementById("month");
+      const yearInput = document.getElementById("year");
+      dayInput.addEventListener("input", () => {
+        dayInput.value = dayInput.value.replace(/\D/g, "");
+        if (dayInput.value > 31) {
+          dayInput.value = 31;
+        }
+      });
+      monthInput.addEventListener("input", () => {
+        monthInput.value = monthInput.value.replace(/\D/g, "");
+        if (monthInput.value > 12) {
+          monthInput.value = 12;
+        }
+      });
+      yearInput.addEventListener("input", () => {
+        yearInput.value = yearInput.value.replace(/\D/g, "");
+        let currentYear = new Date().getFullYear();
+
+        if (yearInput.value > currentYear) {
+          yearInput.value = currentYear;
+        }
+      });
+
+      //============================button label-------------
+      const yearError = document.getElementById("yearError");
+      const monthError = document.getElementById("monthError");
+      const dayError = document.getElementById("dayError");
+
+      const labels = document.querySelectorAll(".label");
+      const btn = document.querySelector(".btn");
+
+      const resultYear = document.getElementById("result-year");
+      const resultMonth = document.getElementById("result-month");
+      const resultDay = document.getElementById("result-day");
+
+      btn.addEventListener("click", () => {
+        yearError.textContent = "";
+        dayError.textContent = "";
+        monthError.textContent = "";
+
+        labels.forEach((i) => (i.style.color = "var(--Purple500)"));
+
+        let isValid = true;
+
+        if (dayInput.value === "") {
+          dayError.textContent = "This field is required";
+          dayError.style.color = "var(--Red400)";
+          document.querySelector('label[for="day"]').style.color =
+            "var(--Red400)";
+
+          isValid = false;
+        }
+        if (monthInput.value === "") {
+          monthError.textContent = "This field is required";
+          monthError.style.color = "var(--Red400)";
+          document.querySelector('label[for="month"]').style.color =
+            "var(--Red400)";
+          isValid = false;
+        }
+
+        if (yearInput.value === "") {
+          yearError.textContent = "This field is required";
+          yearError.style.color = "var(--Red400)";
+          document.querySelector('label[for="year"]').style.color =
+            "var(--Red400)";
+          isValid = false;
+        }
+
+        if (!isValid) return;
+
+        let d = parseInt(dayInput.value);
+        let m = parseInt(monthInput.value);
+        let y = parseInt(yearInput.value);
+
+        if (d < 1 || d > 31) {
+          dayError.textContent = "Must be a Valid Day";
+          document.querySelector('label[for="day"]').style.color = "var(--Red400)";
+          return;
+        };
+        if (m < 1 || m > 12) {
+          monthError.textContent = "Must be a Valid Month";
+          document.querySelector('label[for="month"]').style.color =
+            "var(--Red400)";
+          return;
+        };
+
+        let currentYear = new Date().getFullYear();
+        if (y > currentYear) {
+          yearError.textContent = "Must be in the past";
+          document.querySelector('label[for="year"]').style.color =
+            "var(--Red400)";
+          return;
+        };
+
+        let today = new Date();
+        let tday = today.getDate();
+        let tmonth = today.getMonth() + 1;
+        let tyear = today.getFullYear();
+
+        let calDay = tday - d;
+        let calMonth = tmonth - m;
+        let calYear = tyear - y;
+
+        if(calDay < 0){
+          calMonth--;
+          calDay += new Date(tyear, tmonth -1, 0).getDate();
+        };
+        if(calMonth < 0){
+          calYear--;
+          calMonth +=12;
+        };
+
+        resultYear.textContent = calYear;
+        resultMonth.textContent = calMonth;
+        resultDay.textContent = calDay;
+
+      });
+
+
+      //=========================reset==================
+      const reset = document.getElementById("reset");
+      reset.addEventListener("click", () => {
+         yearError.textContent = "";
+        dayError.textContent = "";
+        monthError.textContent = "";
+
+         resultYear.textContent = "--" ;
+        resultMonth.textContent = "--" ;
+        resultDay.textContent =  "--";
+
+        dayInput.value = "";
+        monthInput.value = "";
+        yearInput.value = "";
+
+        labels.forEach(label => label.style.color = "var(--Grey500)");
+
+      });
+
+
+      
+    </script>
+  </body>
+</html>

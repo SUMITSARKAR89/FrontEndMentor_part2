@@ -115,8 +115,8 @@
           data.forEach((item, i) => {
             const days = document.querySelectorAll(".days .day");
             const bar = days[i];
-
             bar.style.height = item.amount * 3 + "px";
+            
             const tooltip = bar.querySelector(".tooltip");
             tooltip.innerText = "$" + item.amount;
           });

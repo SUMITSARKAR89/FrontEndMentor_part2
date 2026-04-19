@@ -1,0 +1,471 @@
+:root {
+ 
+--Lime: hsl(61, 70%, 52%);
+--Red: hsl(4, 69%, 50%);
+
+
+--White: hsl(0, 0%, 100%);
+--Slate100: hsl(202, 86%, 94%);
+--Slate300: hsl(203, 41%, 72%);
+--Slate500: hsl(200, 26%, 54%);
+--Slate700: hsl(200, 24%, 40%);
+--Slate900: hsl(202, 55%, 16%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 2%;
+  margin: 0 auto;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+p {
+  line-height: 25px;
+  font-size: 15px;
+}
+
+a,
+img,
+input,
+button,
+i {
+  display: block;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+html {
+  scroll-behavior: smooth;
+}
+@keyframes fadeed {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+body {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+  position: relative;
+ font-family: "Plus Jakarta Sans", sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  animation: fadeed 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background: var(--Slate100);
+ 
+}
+button{
+    width: 100%;
+}
+section{
+    width: 70%;
+    background:var(--White);
+    max-width: 100%;
+    margin: 10% auto;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+
+}
+
+section .container{
+    width: 100%;
+    max-width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    height: 85vh;
+}
+.container form,
+.container .card{
+    width: 100%;
+   
+}
+form{
+    padding: 30px;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+form .header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h3{
+    font-size: 1.5rem;
+    color: var(--Slate900);
+    text-transform: capitalize;
+}
+.header a{
+    font-size: 14px;
+    color: var(--Slate700);
+    text-transform: capitalize;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.header a:hover{
+    color: var(--Red);
+}
+
+.calculator{
+    width: 100%;
+    background: var(--White);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.calculator .input-group{
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.calculator .term-rate{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+.input-group label{
+    font-size: 14px;
+    color: var(--Slate700);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.input-group .inputBox{
+    background: var(--Slate100);
+display: flex;
+
+border-radius: 2px;
+border: 1px solid var(--Slate300);
+
+}
+.inputBox input {
+  border: none;        
+  outline: none;       
+  width: 100%;
+  padding: 10px;
+}
+
+
+.inputBox input:focus {
+  border: 1px solid var(--Lime);
+   
+}
+.inputBox:focus-within {
+  border-color: var(--Lime);
+}
+.inputBox:focus-within .symbol {
+  background: var(--Lime);
+  color: var(--Slate900);
+  
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    
+}
+.radio-group label{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--Slate300);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--Slate900);
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.radio-group .set{
+    display: flex;
+}
+.set input[type="radio"] {
+  accent-color: var(--Lime); /* Makes the radio dot green */
+}
+
+/* HOVER EFFECT */
+.set:hover {
+  border-color: #b3b3b3;
+}
+
+/* FOCUS (using JS-added class) */
+
+
+/* CHECKED STYLE */
+.set input[type="radio"]:checked + * {
+  font-weight: 600;
+}
+
+.set:has(input[type="radio"]:checked) {
+  border-color: var(--Lime);
+  background: #f2ffe8;
+}
+
+.inputBox .symbol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--Slate700);
+    text-transform: capitalize;
+
+}
+.inputBox input{
+    width: 100%;
+    padding: 8px;
+    
+    font-size: 18px;
+    border: 0;
+}
+
+.btn{
+    width: fit-content;
+    
+    display: flex;
+    cursor: pointer;
+    border: 0;
+    padding: 5px 55px;
+    outline: 0;
+    gap: 10px;
+    border-radius: 20px;
+    background: var(--Lime);
+    color: var(--Slate900);
+    
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    transition: 0.3s;
+
+
+
+}
+.btn:hover{
+  opacity: 0.8;
+}
+.btn img{
+    width: 20px;
+}
+.btn p{
+    font-size: 14px;
+    font-weight: 700;
+}
+.inputBox.error {
+  border-color: var(--Red);
+}
+
+.inputBox.error .symbol {
+  background: var(--Red);
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+.container .card{
+    background: var(--Slate900);
+    padding: 30px;
+    height: 100%;
+    border-radius:  0 8px 8px 50px;
+    
+}
+.card .resultBox{
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.card .resultBox .show{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    
+}
+.resultBox img{
+    width: fit-content;
+    max-width: fit-content;
+    height: auto;
+    object-fit: cover;
+}
+.show h3{
+    color: var(--White);
+    text-transform: capitalize;
+}
+.show p{
+    color: var(--Slate300);
+}
+
+.error{
+font-size: 10px;
+color: var(--Red);
+font-style: italic;
+text-transform: capitalize;
+}
+
+.resultBox .hide{
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+.hide h4{
+  color: var(--White);
+  text-transform: capitalize;
+}
+.hide p{
+  color: var(--Slate500);
+  font-size: 14px;
+}
+.hide .hidecard{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 5px;
+  padding: 25px 15px;
+  background: hsl(203, 90%, 4%);
+  margin-top: 10%;
+  position: relative;
+  overflow: hidden;
+}
+.hidecard .card1,
+.hidecard .card2{
+  padding: 5px;
+
+}
+.hidecard .card1 {
+  margin-bottom: 15px;
+}
+.hidecard .card1 h1{
+  color: var(--Lime);
+  font-weight: 600;
+  font-size: 3rem;
+}
+.hidecard .card2 {
+  margin-top: 15px;
+}
+.line{
+  width: 100%;
+  height: 1px;
+  background: var(--Slate900);
+}
+.hidecard .card1 p,
+.hidecard .card2 p{
+  font-size: 13px;
+}
+.hidecard::before{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 4px;
+  background: var(--Lime);
+  border-radius: 50px 50px 0 0;
+  overflow: hidden;
+  transform: translateX(-50%);
+}
+
+@media(max-width:1280px){
+  section{
+    width: 90%;
+    transition: 0.3s ease-out;
+
+  }
+}
+@media(max-width:980px){
+  body{
+    padding: 10px;
+  }
+  section{
+    width: 100%;
+
+  }
+  .calculator{
+    margin-top: 10%;
+  }
+}
+
+@media(max-width:760px){
+  section .container{
+    flex-direction: column;
+    height: auto;
+    transition: 0.3s ease-out;
+  }
+  .container .card{
+   
+    border-radius:  0 0 8px 8px;
+    
+}
+}
+@media(max-width:660px){
+  form .header{
+    
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s ease-out;
+}
+.btn{
+  margin: 0 auto;
+}
+ 
+}
