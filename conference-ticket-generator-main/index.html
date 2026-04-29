@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend mentor challange" />
+
+    <meta name="title" content="Frontend mentor challange" />
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/504277832_3201268406688328_2665400811850357163_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53a332&_nc_ohc=RsQ8FB9grKkQ7kNvwGonLMG&_nc_oc=AdmPd8GCYTAODMd6pz2WVgQdmMwXvR1qCrCjHScIpVi03gTbsSe_AlrmKGtdr-cMtVU&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=tRrU1h3rBbsq0J3qFtLYpA&_nc_ss=8&oh=00_AfwyqxVwC123F9IEQQdCB32iwUF2d3SM4esVq7Cn0kMLeA&oe=69BDCFA6"
+    />
+    <!-- font awesome cdn   --------------------------------->
+
+    <!-- this is google font section   --------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ionicon link   --------------------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js"
+      integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- favicon section   --------------------------------->
+    <link
+      rel="shortcut icon"
+      href="https://framerusercontent.com/images/QbZPUDfFXUG8DRCcKmLXFnnmWA.png"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <title>Frontend Mentor | Conference ticket generator</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <img src="assets/images/pattern-lines.svg" alt="" class="bgImg" />
+    <img src="assets/images/pattern-circle.svg" alt="" class="top-r-img" />
+    <img src="assets/images/pattern-circle.svg" alt="" class="right-r-img" />
+    <div class="lastImg"></div>
+    <div class="firstImg"></div>
+    <section id="mainForm">
+      <div class="head">
+        <div class="logo">
+          <img src="assets/images/logo-full.svg" alt="" />
+        </div>
+        <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+      </div>
+      <div class="main">
+        <form action="" id="form">
+          <div class="input-group">
+            <p class="title">upload avatar</p>
+            <label for="inputImg" class="up-label" id="inputImg">
+              <img src="assets/images/icon-upload.svg" alt="" class="upImg" />
+              <input type="file" id="fileInput" hidden />
+              <p>Drag and drop or click to upload</p>
+            </label>
+
+            <small class="rules" id="errorImg">
+              Upload your photo (JPG or PNG, max size: 500KB)
+            </small>
+            <div class="preview-box" id="previewBox">
+              <img id="previewImg" />
+              <div class="remove-change">
+                <span id="changeImg">change image</span>
+                <span id="removeImg">remove image</span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="text">full name</label>
+            <input
+              type="text"
+              name="name"
+              id="nameInput"
+              placeholder="Jonatam Kristof"
+            />
+            <small class="rules" id="errorName"></small>
+          </div>
+          <div class="input-group">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              name=""
+              id="emailInput"
+              placeholder="example@email.com"
+            />
+            <small class="rules" id="errorEmail"></small>
+          </div>
+          <div class="input-group">
+            <label for="text">github username</label>
+            <input
+              type="text"
+              name=""
+              id="gitInput"
+              placeholder="@yourusername"
+            />
+            <small class="rules" id="errorGithub"></small>
+          </div>
+
+          <button type="submit">generate my ticket</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="ticketCard" class="hidden">
+      <div class="head">
+        <div class="logo">
+          <img src="assets/images/logo-full.svg" alt="" />
+        </div>
+        <h1>Congrats, <span id="ticketName">! </span>Your ticket is ready</h1>
+        <p>
+          We've emailed your ticket to <span id="ticketEmail">!</span> and will
+          send updates in the run up to the event.
+        </p>
+      </div>
+      <div class="ticket-box">
+        <img src="assets/images/pattern-ticket.svg" alt="" />
+        <div class="ticket-head">
+          <img src="assets/images/logo-full.svg" alt="" />
+          <div class="time">
+            <span id="month">jan</span>
+            <span id="day">31,</span>
+            <span id="year">2025</span>
+            <span>/</span>
+            <span>Austin, TX</span>
+          </div>
+        </div>
+        <div class="ticket-info">
+          <img src="" alt="" id="avatar" />
+          <div class="desc">
+            <span id="userName">sumit sarkar</span>
+            <span id="githubName"
+              ><img src="assets/images/icon-github.svg" alt="" />adfawe</span
+            >
+          </div>
+        </div>
+        <div class="ticket-number">
+          <span id="ticketNumber"> #01689 </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </footer> -->
+  </body>
+  <script>
+    // ===============================
+    // ELEMENTS
+    // ===============================
+    const fileInput = document.getElementById("fileInput");
+    const inputImg = document.getElementById("inputImg");
+    const previewBox = document.getElementById("previewBox");
+    const previewImg = document.getElementById("previewImg");
+    const removeImg = document.getElementById("removeImg");
+
+    const nameInput = document.getElementById("nameInput");
+    const emailInput = document.getElementById("emailInput");
+    const gitInput = document.getElementById("gitInput");
+
+    const errorImg = document.getElementById("errorImg");
+    const errorName = document.getElementById("errorName");
+    const errorEmail = document.getElementById("errorEmail");
+    const errorGithub = document.getElementById("errorGithub");
+
+    const form = document.getElementById("form");
+
+    const ticketCard = document.getElementById("ticketCard");
+    const mainForm = document.getElementById("mainForm");
+
+    const tName = document.getElementById("ticketName");
+    const tEmail = document.getElementById("ticketEmail");
+    const tGithub = document.getElementById("githubName");
+    const avatar = document.getElementById("avatar");
+
+    const tDay = document.getElementById("day");
+    const tMonth = document.getElementById("month");
+    const tYear = document.getElementById("year");
+    const ticketNumber = document.getElementById("ticketNumber");
+
+    let uploadedImg = null;
+
+    // ===============================
+    // DRAG & DROP
+    // ===============================
+    inputImg.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      inputImg.style.borderColor = "green";
+    });
+
+    inputImg.addEventListener("dragleave", () => {
+      inputImg.style.borderColor = "yellow";
+      
+    });
+
+    inputImg.addEventListener("drop", (e) => {
+      e.preventDefault();
+      handleImage(e.dataTransfer.files[0]);
+      
+    });
+
+    // CLICK → OPEN FILE BROWSER
+    inputImg.addEventListener("click", () => {
+      fileInput.click();
+    });
+
+    // INPUT → IMAGE SELECT
+    fileInput.addEventListener("change", () => {
+      handleImage(fileInput.files[0]);
+    });
+
+    // ===============================
+    // IMAGE PROCESSING FUNCTION
+    // ===============================
+    function handleImage(file) {
+      if (!file) return;
+
+      // Validate type
+      if (!file.type.startsWith("image/")) {
+        errorImg.textContent = "Only image files allowed!";
+        return;
+      }
+
+      // Validate size (max 500KB)
+      if (file.size > 500 * 1024) {
+        errorImg.textContent = "Image must be under 500KB!";
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        uploadedImg = reader.result;
+        previewImg.src = uploadedImg;
+
+        previewBox.style.display = "flex";
+        inputImg.style.display = "none";
+
+        errorImg.textContent = "";
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    // ===============================
+    // REMOVE IMAGE
+    // ===============================
+    removeImg.addEventListener("click", () => {
+      uploadedImg = null;
+      previewBox.style.display = "none";
+      inputImg.style.display = "flex";
+    });
+    changeImg.addEventListener("click", () => {
+      fileInput.click(); // নতুন ছবি বাছাই করার জন্য খোলে
+    });
+    
+
+    // ===============================
+    // FORM SUBMIT
+    // ===============================
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      let valid = true;
+
+      // IMAGE VALIDATION
+      if (!uploadedImg) {
+        errorImg.textContent = "! Please upload an image (max 500KB)";
+        errorImg.style.color = "#ff6a3d";
+        inputImg.style.border = "1px solid #ff6a3d";
+         
+        valid = false;
+      } else {
+        errorImg.textContent = "";
+        inputImg.style.border = "";
+      };
+
+      // NAME VALIDATION
+      if (nameInput.value.trim() === "") {
+        errorName.textContent = "! Please enter a valid name";
+        errorName.style.color = "#ff6a3d";
+        nameInput.style.border = "1px solid #ff6a3d"
+        valid = false;
+      } else {
+        errorName.textContent = "";
+        nameInput.style.border = "";
+      };
+
+      // EMAIL VALIDATION
+      let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailInput.value.trim() === "" || !pattern.test(emailInput.value)) {
+        errorEmail.textContent = "! Please enter a valid email";
+        errorEmail.style.color = "#ff6a3d";
+        emailInput.style.border = "1px solid #ff6a3d";
+        valid = false;
+      } else {
+        errorEmail.textContent = "";
+        emailInput.style.border = "";
+      };
+
+      // GITHUB VALIDATION
+      if (gitInput.value.trim() === "") {
+        errorGithub.textContent = "! Please enter a GitHub username";
+        errorGithub.style.color = "#ff6a3d";
+        gitInput.style.border = "1px solid #ff6a3d";
+        valid = false;
+      } else {
+        errorGithub.textContent = "";
+        gitInput.style.border = "";
+      }
+
+      if (!valid) return;
+
+      // ===============================
+      // FILL TICKET DATA
+      // ===============================
+      tName.textContent = nameInput.value + "! ";
+      tEmail.textContent = emailInput.value;
+      tGithub.innerHTML = `<img src="assets/images/icon-github.svg" alt=""> ${gitInput.value}`;
+      avatar.src = uploadedImg;
+
+      const d = new Date();
+      const months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+      tDay.textContent = d.getDate();
+      tMonth.textContent = months[d.getMonth()];
+      tYear.textContent = d.getFullYear();
+
+      ticketNumber.textContent =
+        "#" + Math.floor(100000 + Math.random() * 900000);
+
+      // ===============================
+      // SHOW TICKET → HIDE FORM
+      // ===============================
+      mainForm.classList.add("hidden");
+      ticketCard.classList.remove("hidden");
+    });
+  </script>
+</html>
