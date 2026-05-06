@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend mentor challange" />
+
+    <meta name="title" content="Frontend mentor challange" />
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/504277832_3201268406688328_2665400811850357163_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53a332&_nc_ohc=RsQ8FB9grKkQ7kNvwGonLMG&_nc_oc=AdmPd8GCYTAODMd6pz2WVgQdmMwXvR1qCrCjHScIpVi03gTbsSe_AlrmKGtdr-cMtVU&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=tRrU1h3rBbsq0J3qFtLYpA&_nc_ss=8&oh=00_AfwyqxVwC123F9IEQQdCB32iwUF2d3SM4esVq7Cn0kMLeA&oe=69BDCFA6"
+    />
+    <!-- font awesome cdn   --------------------------------->
+
+    <!-- this is google font section   --------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ionicon link   --------------------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js"
+      integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- favicon section   --------------------------------->
+    <link
+      rel="shortcut icon"
+      href="https://framerusercontent.com/images/QbZPUDfFXUG8DRCcKmLXFnnmWA.png"
+      type="image/x-icon"
+    />
+    <title>Frontend Mentor | Product list with cart</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <section>
+      <div class="productCard" id="productCard">
+        <h2>Dessert</h2>
+        <div class="cardContainer">
+          <div class="card">
+            <!-- <div class="card-content">
+              <div class="card-img">
+                <img src="assets/images/image-waffle-desktop.jpg" alt="" />
+              </div>
+              <div class="card-desc">
+                <small class="title">Waffle</small>
+                <span class="pdesc" style="color: #000; font-weight: 600"
+                  >Waffle with Berries
+                </span>
+                <span class="price">$6.50</span>
+              </div>
+            </div>
+            <div class="addBtn">
+              <div class="addCart">
+                <img
+                  src="assets/images/icon-add-to-cart.svg"
+                  alt=""
+                  class="addimg"
+                />
+                <p>add to cart</p>
+              </div>
+              <div class="plus-minus">
+                <img
+                  src="assets/images/icon-decrement-quantity.svg"
+                  alt=""
+                  id="minus"
+                />
+                <span id="plusminusCount">0</span>
+                <img
+                  src="assets/images/icon-increment-quantity.svg"
+                  alt=""
+                  id="plus"
+                />
+              </div>
+            </div> -->
+          </div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+      </div>
+      <div class="cart" id="cart">
+        <h4>Your cart (<span id="totalNumber">0</span>)</h4>
+        <div class="cartImg" id="cartImg">
+          <img src="assets/images/illustration-empty-cart.svg" alt="" />
+          <p>Your added items will appear here</p>
+        </div>
+        <div class="cartbody" id="cartbody">
+          <div class="cartItem">
+            <div class="cartItemBox">
+              <h6>Classic Tiramisu</h6>
+              <div class="item-content">
+                <span class="span"><span class="qty">1</span>x</span>
+                <span class="qtyPrice">$</span>
+                <span class="qtyTotal">$</span>
+              </div>
+            </div>
+            <img
+              src="assets/images/icon-remove-item.svg"
+              alt=""
+              class="delete"
+            />
+          </div>
+          <div class="order">
+            <p>order total</p>
+            <span id="total">$46.50</span>
+          </div>
+          <button class="carbon">
+            <img src="assets/images/icon-carbon-neutral.svg" alt="" />
+            <p>This is a <b>carbon-neutral </b>delivery</p>
+          </button>
+          <button id="orderBtn">confirm order</button>
+        </div>
+      </div>
+    </section>
+    <div id="orderConfirm">
+      <div class="orderConfirmed">
+        <img src="assets/images/icon-order-confirmed.svg" alt="" class="icon" />
+        <h4 class="h4">order confirmed</h4>
+        <small class="small">We hope you enjoy your food</small>
+        <div class="confirmCards">
+          <!-- <div class="confirmCard">
+            <div class="c-card">
+              <img src="assets/images/image-baklava-desktop.jpg" alt="" />
+              <div class="confirm-content">
+                <p class="c-title">title</p>
+                <p>
+                  <span class="c-count">1x</span>
+                  <span class="c-price">$5.50</span>
+                </p>
+              </div>
+            </div>
+            <span class="c-total">$00</span>
+          </div> -->
+        </div>
+        <div class="confirmTotalCard">
+          <p>order total</p>
+          <span id="confirmTotal" class="c-total">$46.50</span>
+        </div>
+        <button type="reset" id="reset">start new order</button>
+      </div>
+    </div>
+
+    <!--    Crème Brûlée 7.00 Add to Cart Macaron Mix of Five Macaron 8.00 Add to
+    Cart Classic Tiramisu Tiramisu 5.50 Add to Cart Pistachio Baklava Baklava
+    4.00 Add to Cart Lemon Meringue Pie Pie 5.00 Add to Cart Red Velvet Cake
+    Cake 4.50 Add to Cart Salted Caramel Brownie Brownie 4.50 Add to Cart
+    Vanilla Panna Cotta Panna Cotta 6.50 Add to Cart Your Cart (Quantity)
+    Your added items will appear here -->
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </footer>
+    <script>
+      //1. ============================
+      //  LOAD PRODUCTS
+      // ============================
+      function init() {
+        fetch("data.json")
+          .then((res) => res.json())
+          .then((data) => {
+            products = data;
+            renderProducts();
+          })
+          .catch((err) => {
+            console.error("Failed to load products", err);
+          });
+      }
+      init();
+
+      //2. ============================
+      //  RESPONSIVE IMAGE
+      // ============================
+      function getResponsiveImage(image) {
+        const w = window.innerWidth;
+
+        if (w >= 1280) return image.desktop;
+        if (w >= 850) return image.tablet;
+
+        return image.mobile;
+      }
+
+      //3. ============================
+      //  GLOBAL STATE
+      // ============================
+      let products = [];
+      let cart = {};
+
+      // ============================
+      //  SELECTORS
+      // ============================
+      const productContainer = document.querySelector(".cardContainer");
+      const cartImg = document.getElementById("cartImg");
+      const cartBody = document.getElementById("cartbody");
+      const totalNumber = document.getElementById("totalNumber");
+
+      //3.a ============================
+      //  RENDER PRODUCTS
+      // ============================
+      function renderProducts() {
+        productContainer.innerHTML = ""; // Clear old content
+
+        products.forEach((item, index) => {
+          const card = document.createElement("div");
+          card.classList.add("card");
+          card.setAttribute("data-id", index);
+
+          card.innerHTML = `
+      <div class="card-content">
+        <div class="card-img">
+          <img 
+            src="${getResponsiveImage(item.image)}"
+            class="product-img"
+            alt="${item.name}"
+          />
+        </div>
+
+        <div class="card-desc">
+          <small class="title">${item.category}</small>
+          <span class="pdesc">${item.name}</span>
+          <span class="price">$${item.price.toFixed(2)}</span>
+        </div>
+      </div>
+
+      <div class="addBtn">
+        <div class="addCart">Add to Cart</div>
+
+        <div class="plus-minus">
+          <button class="minus">-</button>
+          <span class="qtyCount">0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+    `;
+
+          productContainer.appendChild(card);
+        });
+        attachEvents();
+      }
+
+      //3.b ============================
+      //  EVENT HANDLING (DELEGATION)
+      // ============================
+      function attachEvents() {
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach((card) => {
+    const id = card.dataset.id;
+    const product = products[id];
+    const qtyEl = card.querySelector(".qtyCount");
+
+    const addBtn = card.querySelector(".addCart");
+    const plusBtn = card.querySelector(".plus");
+    const minusBtn = card.querySelector(".minus");
+
+    // Add to cart
+    addBtn.addEventListener("click", () => {
+      addItem(product);
+      qtyEl.textContent = cart[product.name].qty;
+    });
+
+    // Increase quantity
+    plusBtn.addEventListener("click", () => {
+      addItem(product);
+      qtyEl.textContent = cart[product.name].qty;
+    });
+
+    // Decrease quantity
+    minusBtn.addEventListener("click", () => {
+      removeItem(product);
+      qtyEl.textContent = cart[product.name]?.qty || 0;
+    });
+  });
+}
+
+      // ============================
+      //  CART LOGIC
+      // ============================
+      function addItem(product) {
+        if (!cart[product.name]) {
+          cart[product.name] = { ...product, qty: 1 };
+        } else {
+          cart[product.name].qty++;
+        }
+
+        updateCart();
+      }
+
+      function removeItem(product) {
+        if (!cart[product.name]) return;
+
+        cart[product.name].qty--;
+
+        if (cart[product.name].qty <= 0) {
+          delete cart[product.name];
+        }
+
+        updateCart();
+      }
+
+      // ============================
+      //  UPDATE CART UI
+      // ============================
+      function updateCart() {
+        const items = Object.values(cart);
+
+        // empty cart
+        if (items.length === 0) {
+          cartImg.style.display = "flex";
+          cartBody.style.display = "none";
+          totalNumber.textContent = 0;
+          return;
+        }
+
+        cartImg.style.display = "none";
+        cartBody.style.display = "block";
+
+        const totalQty = items.reduce((sum, i) => sum + i.qty, 0);
+        totalNumber.textContent = totalQty;
+
+        renderCartItems(items);
+      }
+
+      // ============================
+      //  RENDER CART ITEMS
+      // ============================
+      function renderCartItems(items) {
+        let total = 0;
+
+        const html = items
+          .map((item) => {
+            const subTotal = item.qty * item.price;
+            total += subTotal;
+
+            return `
+      <div class="cartItem">
+        <div class="cartItemBox">
+          <h6>${item.name}</h6>
+          <div class="item-content">
+            <span class="span">${item.qty}x</span>
+            <span class="qtyPrice">$${item.price.toFixed(2)}</span>
+            <span class="qtyTotal">$${subTotal.toFixed(2)}</span>
+          </div>
+        </div>
+        <button class="delete" data-name="${item.name}">✕</button>
+      </div>
+    `;
+          })
+          .join("");
+
+        cartBody.innerHTML = `
+    ${html}
+
+    <div class="order">
+      <p>Order total</p>
+      <span>$${total.toFixed(2)}</span>
+    </div>
+
+    <button id="orderBtn">Confirm Order</button>
+  `;
+
+        attachCartEvents();
+      }
+
+      // ============================
+      //  CART EVENTS
+      // ============================
+      function attachCartEvents() {
+        // delete item
+        document.querySelectorAll(".delete").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            delete cart[btn.dataset.name];
+            updateCart();
+            syncUI();
+          });
+        });
+
+        // confirm order
+        const orderBtn = document.getElementById("orderBtn");
+        if (orderBtn) {
+          orderBtn.addEventListener("click", showConfirmPopup);
+        }
+      }
+
+      // ============================
+      //  SYNC PRODUCT UI
+      // ============================
+      function syncUI() {
+        document.querySelectorAll(".card").forEach((card) => {
+          const name = card.querySelector(".pdesc").textContent;
+          const qtyEl = card.querySelector(".qtyCount");
+
+          qtyEl.textContent = cart[name]?.qty || 0;
+        });
+      }
+
+      // ============================
+      //  CONFIRM POPUP
+      // ============================
+      function showConfirmPopup() {
+        const popup = document.getElementById("orderConfirm");
+        const container = document.querySelector(".confirmCards");
+        const totalEl = document.getElementById("confirmTotal");
+
+        const items = Object.values(cart);
+
+        let total = 0;
+
+        container.innerHTML = items
+          .map((item) => {
+            const sub = item.qty * item.price;
+            total += sub;
+
+            return `
+      <div class="confirmCard">
+        <div class="c-card">
+          <img src="${getResponsiveImage(item.image)}" />
+          <div class="confirm-content">
+            <p class="c-title">${item.name}</p>
+            <p>
+              <span class="c-count">${item.qty}x</span>
+              <span class="c-price">$${item.price.toFixed(2)}</span>
+            </p>
+          </div>
+        </div>
+        <span class="c-total">$${sub.toFixed(2)}</span>
+      </div>
+    `;
+          })
+          .join("");
+
+        totalEl.textContent = `$${total.toFixed(2)}`;
+        popup.style.display = "block";
+      }
+
+      // ============================
+      //  RESET ORDER
+      // ============================
+      document.getElementById("reset").addEventListener("click", () => {
+        cart = {};
+        updateCart();
+        syncUI();
+
+        document.getElementById("orderConfirm").style.display = "none";
+      });
+
+      // ============================
+      //  RESPONSIVE IMAGE UPDATE
+      // ============================
+      window.addEventListener("resize", () => {
+        document.querySelectorAll(".product-img").forEach((img, i) => {
+          img.src = getResponsiveImage(products[i].image);
+        });
+      });
+    </script>
+  </body>
+</html>

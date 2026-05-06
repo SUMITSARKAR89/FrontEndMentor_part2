@@ -1,0 +1,84 @@
+:root {
+ --Neutral900: hsl(0, 0%, 7%);
+--Neutral800: hsl(0, 0%, 15%);
+--Neutral500: hsl(240, 3%, 46%);
+--Neutral400: hsl(240, 1%, 59%);
+--Neutral0: hsl(0, 0%, 100%);
+--Blue600: hsl(214, 100%, 55%);
+--Blue400: hsl(210, 100%, 65%);
+--Red500: hsl(354, 63%, 57%);
+--Green500: hsl(140, 63%, 57%);
+--Yellow400: hsl(49, 85%, 70%); 
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 2%;
+  margin: 0 auto;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+p {
+  line-height: 25px;
+  font-size: 15px;
+}
+
+a,
+img,
+input,
+button,
+i {
+  display: block;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+html {
+  scroll-behavior: smooth;
+}
+@keyframes fadeed {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+body {
+  max-width: 100%;
+  height: 150vh;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+  position: relative;
+  font-family: "Inconsolata", monospace;
+  overflow-x: hidden;
+  background-image: url(assets/images/background-desktop.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+color: var(--Neutral0);
+  animation: fadeed 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
